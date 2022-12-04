@@ -1,5 +1,6 @@
 # JavaScript All in one 
-- 강사 : 벨로퍼트(김민준)
+- 채널 : fast campus  
+- 강사 : 벨로퍼트(김민준) 
   
 ## Template Literal  
 ```js
