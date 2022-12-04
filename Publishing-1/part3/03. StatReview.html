@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://kit.fontawesome.com/4a12b3abf8.js" crossorigin="anonymous"></script>
+
+  <style>
+
+    body {
+      color: #222;
+      background-color: #fff;
+      line-height: 1.5em;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    a {
+      text-decoration: none;
+      color: #222;
+    }
+
+    .start-ration {
+      background-color: #333;
+      width: 300px;
+      text-align: center;
+      border-radius: 5px;
+      padding: 20px 5px;
+      box-sizing: border-box;
+    }
+    .start-ration div {
+      float: left;
+      width: 50%;
+    }
+    .start-ration .stars {}
+    .start-ration .stars .fa-solid {
+      font-size: 18px;
+      cursor: pointer;
+    }
+    .start-ration .stars .fa-solid.active {
+      color: yellow;
+      text-shadow: 0 0 5px yellow;
+    }
+
+    .start-ration .print {
+      color: #fff;
+    }
+    .start-ration .print p {
+      margin: 0;
+    }
+    .start-ration .print p img {
+      vertical-align: top;
+      margin-right: 5px;
+    }
+
+
+  </style>
+</head>
+<body>
+
+  <div class="start-ration">
+    <div class="stars">
+      <i class="fa-solid fa-star"></i>
+      <i class="fa-solid fa-star"></i>
+      <i class="fa-solid fa-star"></i>
+      <i class="fa-solid fa-star"></i>
+      <i class="fa-solid fa-star"></i>
+    </div>
+    <div class="print">
+      <p>별점 주실거죠?ㅎ</p>
+    </div>
+  </div>
+
+
+
+
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script>
+
+    
+    $('.start-ration .stars .fa-solid').click(function() {
+      $(this).addClass('active'); /* 클릭한 요소 */
+      $(this).prevAll().addClass('active'); /* 이전 요소들 */
+      $(this).nextAll().removeClass('active'); /* 다음 요소들*/
+
+      let num = $(this).index(); /* 0부터 시작 */
+      let starRate = num + 1; /* 1부터 시작 */
+      // $('.print p').text(starRate);
+      if (starRate == 1) {
+        $('.print p').html('<img src="./img/star-lv1.png">' + '별로에요');
+      } else if (starRate == 2) {
+        $('.print p').html('<img src="./img/star-lv2.png">' + '보통 이에요');
+      } else if (starRate == 3) {
+        $('.print p').html('<img src="./img/star-lv3.png">' + '그냥 그래요');
+      } else if (starRate == 4) {
+        $('.print p').html('<img src="./img/star-lv4.png">' + '맘에 들어요');
+      }else {
+        $('.print p').html('<img src="./img/star-lv5.png">' + '아주 좋아요');
+      }
+      
+    });
+
+  </script>
+
+</body>
+</html>

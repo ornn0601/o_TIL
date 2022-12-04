@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    body {
+      color: #222;
+      line-height: 1.5em;
+    }
+    a {
+      text-decoration: none;
+      color: #222;
+    }
+
+    .items {
+      text-align: center;
+    }
+    .item {
+      display: inline-block;
+      width: 300px;
+      height: 300px;
+      position: relative;
+    }
+    .caption {
+      width: 100%;
+      height: 100%;
+      background-color: #000;
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: #fff;
+      padding: 20px;
+      padding-top: 40px;
+      opacity: 0;
+      transition: 0.5s;
+      box-sizing: border-box;
+    }
+    .caption a {
+      color: #fff;
+      background-color: teal;
+      padding: 7px;
+      border-radius: 3px;
+    }
+    .caption a:hover {
+      background-color: #fff;
+      color: #000;
+    }
+
+    .item img {
+      width: 100%;
+    }
+
+    /* hover action */
+    .item:hover .caption {
+      opacity: 1;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="items">
+
+    <div class="item">
+      <img src="./images/product-01.png" alt="product-01">
+      <div class="caption">
+        <h2>Rirakuma doll 25cm</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <p>Price : <s>$12</s> → $10</p>
+        <a href="#none">View Details</a>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="./images/product-02.png" alt="product-02">
+      <div class="caption">
+        <h2>Rirakuma doll 25cm</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <p>Price : <s>$12</s> → $10</p>
+        <a href="#none">View Details</a>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="./images/product-03.png" alt="product-03">
+      <div class="caption">
+        <h2>Rirakuma doll 25cm</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <p>Price : <s>$12</s> → $10</p>
+        <a href="#none">View Details</a>
+      </div>
+    </div>
+
+  </div>
+
+
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script>
+
+
+  </script>
+
+</body>
+</html>

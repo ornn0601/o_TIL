@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://kit.fontawesome.com/4a12b3abf8.js" crossorigin="anonymous"></script>
+
+  <style>
+
+    body {
+      color: #222;
+      background-color: #fff;
+      line-height: 1.5em;
+      height: 100vh;
+    }
+    a {
+      text-decoration: none;
+      color: #222;
+    }
+
+    .container {}
+
+    /* trigger button */
+    input[id=trigger] {
+      display: none;
+    }
+
+    label[for=trigger] {
+      width: 100px;
+      height: 80px;
+      display: block;
+      position: absolute;
+      cursor: pointer;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: 0.3s;
+    }
+    label[for=trigger] span {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background-color: #000;
+      transition: 0.3s;
+    }
+    label[for=trigger] span:nth-child(1) {
+      top: 0;
+    }
+    label[for=trigger] span:nth-child(2) {
+      top: 50%;
+    }
+    label[for=trigger] span:nth-child(3) {
+      top: 100%;
+    }
+
+    /* sidebar */
+    .sidebar {
+      background-color: #000;
+      width: 300px;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      right: -300px;
+      transition: 0.3s;
+    }
+
+    /* click : 인접요소 선택자 */
+    input[id=trigger]:checked + label[for=trigger] span:nth-child(1) {
+      top: 50%;
+      transform: rotate(45deg);
+    }
+    input[id=trigger]:checked + label[for=trigger] span:nth-child(2) {
+      opacity: 0;
+    }
+    input[id=trigger]:checked + label[for=trigger] span:nth-child(3) {
+      top: 50%;
+      transform: rotate(-45deg);
+    }
+
+    /* 형제요소 선택지 */
+    input[id=trigger]:checked ~ .sidebar {
+      right: 0;
+    }
+    input[id=trigger]:checked + label[for=trigger] {
+      right: 310px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- 버튼 -->
+    <input type="checkbox" id="trigger">
+    <label for="trigger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+    <div class="sidebar"></div>
+  </div>
+
+
+  
+
+
+
+
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script>
+
+
+  </script>
+
+</body>
+</html>

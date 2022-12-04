@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GRID</title>
+  <link rel="stylesheet" href="default.css">
+  <style>
+    .grid-container {
+      display: grid;
+      /* grid-template-columns: 100px 300px 200px; */
+      /* grid-template-columns: 1fr 2fr 1fr; */
+      /* grid-template-columns: 1fr 500px 1fr; */
+      grid-template-columns: repeat(3, 1fr); /* 반복 */
+      /* grid-template-columns: repeat(5, 1fr); 반복 (횟수, 방식) */
+      grid-template-rows: repeat(200px, minmax());
+      height: 80vh;
+      gap: 20px;
+    }
+
+    .grid-container .grid-item {
+      background: orangered;
+      color: #fff;
+      font-size: 2rem;
+      padding: 10px;
+    }
+
+    .grid-container .grid-item:nth-child(1) {
+      grid-column-start: 1;
+      grid-column-end: 3;
+      grid-row-start: 1;
+      grid-row-end: 4;
+    }
+    .grid-container .grid-item:nth-child(3) {
+      grid-column: 3;
+      grid-row: 2;
+    }
+    .grid-container .grid-item:nth-child(4) {
+      grid-column: 3;
+      /* grid-row: 3 / 5; */
+      grid-row: 2 / span 3;
+      opacity: .8;
+    }
+
+    .grid-container2 {
+      display: grid;
+      gap: 1rem;
+      height: 80vh;
+      grid-template-columns: 1fr 3fr 1fr;
+      grid-template-areas:
+      'none header header'
+      'sidebar-a main sidebar-b'
+      'footer footer footer'
+    }
+    .grid-container2 .grid-item {
+      background: goldenrod;
+    }
+    .grid-container2 .header { grid-area: header; }
+    .grid-container2 .sidebar-a { grid-area: sidebar-a; }
+    .grid-container2 .sidebar-b { grid-area: sidebar-b; }
+    .grid-container2 .main { grid-area: main; }
+    .grid-container2 .footer { grid-area: footer; }
+  </style>
+</head>
+<body>
+  
+  <div class="grid-container">
+    <div class="grid-item">A</div>
+    <div class="grid-item">B</div>
+    <div class="grid-item">C</div>
+    <div class="grid-item">D</div>
+    <div class="grid-item">E</div>
+    <div class="grid-item">F</div>
+    <div class="grid-item">G</div>
+    <div class="grid-item">H</div>
+    <div class="grid-item">I</div>
+  </div>
+
+  <div class="grid-container2">
+    <div class="header grid-item">A</div>
+    <div class="sidebar-a grid-item">B</div>
+    <div class="sidebar-b grid-item">C</div>
+    <div class="main grid-item">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, impedit consequuntur minus sunt ad laboriosam molestiae est consequatur consectetur quae rerum veniam atque, perspiciatis voluptates nulla adipisci voluptatibus. Accusantium, iusto.
+    </div>
+    <div class="footer grid-item">E</div>
+  </div>
+
+</body>
+</html>

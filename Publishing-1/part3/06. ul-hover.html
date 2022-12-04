@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://kit.fontawesome.com/4a12b3abf8.js" crossorigin="anonymous"></script>
+
+  <style>
+
+    body {
+      color: #222;
+      background-color: #eee;
+      line-height: 1.5;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    a {
+      text-decoration: none;
+      color: #222;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: normal;
+    }
+
+    .item {
+      border-radius: 10px;
+      overflow: hidden;
+      line-height: 0;
+      position: relative;
+      box-shadow: 0 0 20px rgba(0, 0 ,0, .2);
+    }
+    .item img {
+      width: 100%;
+      transition: 0.3s;
+    }
+    .item:hover img {
+      filter: blur(2px);
+    }
+
+    .detail {
+      position: absolute;
+      bottom: -186px;
+      left: 0;
+      width: 100%;
+      height: 260px;
+      background-color: #fff;
+      transition: 0.5s;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .item:hover .detail {
+      bottom: 0;
+    }
+
+    /* title */
+    .title {
+      overflow: hidden;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 10px;
+    }
+    .title h2 {
+      font-size: 16px;
+      color: #555;
+      line-height: 1.4;
+      color: #888;
+      margin: 0;
+      float: left;
+    }
+    .title h2 em {
+      display: block;
+      font-style: normal;
+      color: #000;
+    }
+    .title span {
+      float: right;
+      margin-top: 10px;
+      color: crimson;
+    }
+    
+    /* info */
+    .info {
+      position: relative;
+    }
+    .size {
+      margin-top: 10px;
+    }
+    .size label, .color label {
+      display: block;
+      line-height: 1.5;
+      margin-bottom: 2px;
+    }
+    .size span, .color span {
+      display: inline-block;
+      transition: 0.3s;
+      margin-right: 5px;
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+      box-sizing: border-box;
+    }
+    
+    .size span {
+      font-size: 12px;
+      color: #000;
+      background-color: #fff;
+      text-align: center;
+      line-height: 20px;
+      border-radius: 3px;
+    }
+    .size span.active,
+    .size span:hover {
+      color: #fff;
+      background-color: #000;
+    }
+    
+    .color {
+      margin-top: 10px;
+    }
+
+    .color span {
+      border: 1px solid transparent;
+    }
+    .color span.active {
+      border-radius: 50%;
+      border: 1px solid #000;
+    }
+
+    .color span:nth-of-type(1) {
+      background-color: #808000;
+    }
+    .color span:nth-of-type(2) {
+      background-color: #ff0000;
+    }
+    .color span:nth-of-type(3) {
+      background-color: #ffc0cb;
+    }
+    .color span:nth-of-type(4) {
+      background-color: #00ffff;
+    }
+    .color span:nth-of-type(5) {
+      background-color: #0000ff;
+    }
+
+    .add-cart {
+      border: 1px solid #ddd;
+      width: 100%;
+      padding: 7px;
+      background-color: #fff;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+
+    .add-cart:hover {
+      background-color: #000;
+      color: #fff;
+    }
+
+    /* like */
+    .like {}
+    .like:before {
+      content: '\f08a';
+      font-family: fontawesome;
+      color: #bbb;
+      position: absolute;
+      top: 10px;
+      right: 0;
+      cursor: pointer;
+    }
+    .like.active:before {
+      content: '\f004';
+      color: crimson;
+    }
+
+    
+  </style>
+</head>
+<body>
+
+  <div class="item">
+    <img src="./img/model-female.png" alt="model">
+    <div class="detail">
+      <div class="title">
+        <h2><em>Nightgown</em> Women's Designer Wear</h2>
+        <span>$55.99</span>
+      </div>
+      <div class="info">
+        <div class="size">
+          <label>Size</label>
+          <span>XS</span>
+          <span>S</span>
+          <span>M</span>
+          <span>L</span>
+          <span>XL</span>
+        </div>
+        <div class="color">
+          <label>Color</label>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <span class="like"></span>
+      </div>
+      <button class="add-cart">Add to Cart</button>
+    </div>
+  </div>
+
+
+
+
+
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script>
+
+    // $('.size span, .color span').click(function() {
+    //   $(this).addClass('active');
+    //   $(this).siblings().removeClass('active');
+    // });
+    $('.size span, .color span').on('click', function() {
+      $(this).addClass('active');
+      $(this).siblings().removeClass('active');
+    });
+
+    $('.like').click(function() {
+      $(this).toggleClass('active');
+    });
+
+
+
+  </script>
+
+</body>
+</html>

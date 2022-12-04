@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>반응속도 체크</title>
+
+  <style>
+    #screen {
+      width: 300px;
+      height: 200px;
+      text-align: center;
+      user-select: none;
+    }
+    #screen.waiting {
+      background-color: aqua;
+    }
+    #screen.ready {
+      background-color: red;
+      color: white;
+    }
+    #screen.now {
+      background-color: greenyellow;
+    }
+  </style>
+
+</head>
+<body>
+
+  <div id="screen" class="waiting">클릭해서 시작하세요</div>
+  <div id="result"></div>
+
+  <script>
+    /* 
+    $screen.className; = 클래스 이름 가져오기 (여러개일 경우 문자열로 전체 가져옴)
+    $screen.classList.contains('waiting') = 해당 클래스가 있는지 체크
+    태그.classList.add('클래스') : 추가
+    태그.classList.replace('기존클래스', '수정클래스') : 수정
+    태그.classList.remove('클래스') : 제거
+    
+    (시간)
+    현재 시간 : new Date(); : 현재의 시간이 나오는 객체
+    과거 시간 : new Date(년, 월, 일, 시, 분, 초); 월은 0부터 시작
+    시간 계산 : (시간 / 1000(밀리초) / 60(초) / 60(분) / 24(시간)) 
+
+    (배열)
+    reduce(); : 축소하다.
+
+    배열.reduce((누적값, 현재값) => {
+      return 새로운 누적값;
+    }, 초기값);
+    
+    [1,2,3,4]reduce((a, c) => (a + c), 0) : a는 누적값, c는 현재값
+    - a : 0, c = 1
+    - a : 1, c = 2
+    - a : 3, c = 3
+    - a : 6, c = 4
+    ['철수', '영희', '현영', '철수'].reduce((a, c, i) => {a[i] = c; return a}, {}); 
+    초기값을 넣지 않으면 첫번째 값이 초기값이다.
+    */
+
+    const $screen = document.querySelector('#screen');
+    const $result = document.querySelector('#result');
+
+    let startTime; // 스코프 문제 발생을 차단하기 위해 전역 선언
+    let endTime;
+    const records = [];
+
+    $screen.addEventListener('click', (event) => {
+      if (event.target.classList.contains('waiting')) { // 파랑
+        $screen.classList.remove('waiting');
+        $screen.classList.add('ready');
+        $screen.textContent = '초록색을 되면 클릭하세요';
+        timeoutId = setTimeout(() => { /* function() {} */
+          startTime = new Date();
+          $screen.classList.remove('ready');
+          $screen.classList.add('now');
+          $screen.textContent = '클릭하세요!';
+          // 첫시간 재기
+        }, Math.floor(Math.random() * 1000) + 2000); // 2000~3000 사이 수
+      } else if (event.target.classList.contains('ready')) { // 빨강
+        // 성급한 클릭 막기
+        clearTimeout(timeoutId);
+        $screen.classList.remove('ready');
+        $screen.classList.add('waiting');
+        $screen.textContent = '너무 성급하시군요!';
+      } else if (event.target.classList.contains('now')) { // 초록
+        endTime = new Date();
+        const current = endTime - startTime;
+        records.push(current);
+        const average = records.reduce((a, c) => a + c) / records.length; // 평균구하기
+        $result.textContent = `현재 ${current}ms, 평균: ${average}ms`;
+
+        // 속도순으로 정렬하기
+        const topFive = records.sort((p, c) => p - c).slice(0, 5);
+        topFive.forEach((top, index) => {
+          $result.append(
+            document.createElement('br'),
+            `${index + 1}위: ${top}ms`
+          );
+        });
+
+        startTime = null; // 변수 초기화
+        endTime = null;
+        // 끝 시간 재기, 시간 차이 저장하기
+        // endTime = new Date();
+        // $result.textContent = `${endTime - startTime}ms`;
+        $screen.classList.remove('now');
+        $screen.classList.add('waiting');
+        $screen.textContent = '클릭해서 시작하세요';
+      }
+    });
+
+
+  </script>
+
+</body>
+</html>

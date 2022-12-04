@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animation</title>
+  <style>
+
+    @keyframes ball-ani {
+      from {
+        transform: translate(0, 0);
+      }
+      to {
+        transform: translate(200px, 200px);
+      }
+    }
+
+    .ball {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: red;
+      transition: 1s;
+      /* animation: ball-ani 1s 3 alternate forwards; */
+    }
+    .ball.end {
+      border: 5px solid dodgerblue;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="ball"></div>
+  
+  <script>
+
+    const ballElem = document.querySelector('.ball');
+
+    ballElem.addEventListener('click', function() {
+      ballElem.style.animation = 'ball-ani 1s 3 alternate forwards';
+    });
+
+    // 시작과 함께 적용
+    ballElem.addEventListener('animationstart', function() {
+      ballElem.classList.add('end');
+    });
+
+    // 끝난 후 적용
+    ballElem.addEventListener('animationend', function() {
+      ballElem.classList.add('end');
+    });
+
+    // 반복 실행되는 시점의 이벤트를 잡아낼 수 있다
+    ballElem.addEventListener('animationiteration', function() {
+      console.log('반복');
+
+    });
+
+
+
+
+
+  </script>
+</body>
+</html>

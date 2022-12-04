@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    html {
+      font-size: 15px;
+    }
+
+    body {
+      line-height: 1.5;
+      margin: 0;
+      font-weight: 300;
+      background-color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow-x: hidden;
+      width: 100%;
+    }
+    a {
+      text-decoration: none;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      width: 85.4rem; /* 1281px */
+    }
+
+    .square {
+      width: 24rem; /* 360px */
+      height: 24rem;
+      position: relative;
+    }
+
+    .square span {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border: 1px solid #fff;
+      border-radius: 40% 60% 65% 35% / 40% 45% 55% 60%;
+      transition: 0.5s; /* hover 대응 */
+      animation: circle 5s linear infinite;
+    }
+    .square:hover span {
+      border: none;
+    }
+    .square:nth-child(1):hover span {
+      background-color: crimson;
+    }
+    .square:nth-child(2):hover span {
+      background-color: dodgerblue;
+    }
+    .square:nth-child(3):hover span {
+      background-color: yellowgreen;
+    }
+
+    .square span:nth-child(1) {
+      animation: circle 6s linear infinite;
+      opacity: 0.2;
+    }
+    .square span:nth-child(2) {
+      animation: circle 4s linear infinite;
+      animation-direction: reverse;
+      opacity: 0.4;
+    }
+    .square span:nth-child(3) {
+      animation: circle 10s linear infinite;
+      opacity: 0.6;
+    }
+
+    /* .square:hover span:nth-child(1) {
+      opacity: 0.2;
+    }
+    .square:hover span:nth-child(2) {
+      opacity: 0.4;
+    }
+    .square:hover span:nth-child(3) {
+      opacity: 0.6;
+    } */
+
+    .square div {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 70%;
+      text-align: center;
+      color: #fff;
+    }
+    .square div h2 {
+      font-size: 2rem;
+    }
+    .square div p {
+      font-size: 1rem;
+    }
+    .square div a {
+      display: inline-block;
+      color: #fff;
+      padding: 0.5em;
+      border: 1px solid #fff;
+      border-radius: 40% 60% 65% 35% / 40% 45% 55% 60%;
+      font-size: 1rem;
+      margin-top: 0.6rem;
+    }
+
+
+    @keyframes circle {
+      0% {
+        transform: rotate(0);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @media all and (max-width: 980px) {
+
+      html {
+        font-size: 14px;
+      }
+
+      body {
+        display: block;
+        height: auto;
+        margin: 10vh 0;
+      }
+
+      .container {
+        display: block;
+        width: 100%;
+      }
+
+      .square {
+        width: 90vw;
+        height: 90vw;
+        margin: 10% auto;
+      }
+
+      .square div h2 {
+        font-size: min(max(10px, 5.38vw), 42px);
+      }
+      .square div p {
+        font-size: min(max(10px, 3.85vw), 30px);
+      }
+
+      .square div a {
+        font-size: min(max(10px, 3.85vw), 30px);
+        margin-top: 5vw;
+      }
+    }
+
+
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <div class="square">
+      <span></span>
+      <span></span>
+      <span></span>
+      <div class="content">
+        <h2>Heading Text</h2>
+        <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur facilis, molestias magnam non neque ducimus dignissimos corrupti laboriosam unde? Id possimus quidem aperiam veritatis ut eius adipisci blanditiis saepe unde.
+        </p>
+        <a href="#none">Read More</a>
+      </div>
+    </div>
+
+    <div class="square">
+      <span></span>
+      <span></span>
+      <span></span>
+      <div class="content">
+        <h2>Heading Text</h2>
+        <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur facilis, molestias magnam non neque ducimus dignissimos corrupti laboriosam unde? Id possimus quidem aperiam veritatis ut eius adipisci blanditiis saepe unde.
+        </p>
+        <a href="#none">Read More</a>
+      </div>
+    </div>
+
+    <div class="square">
+      <span></span>
+      <span></span>
+      <span></span>
+      <div class="content">
+        <h2>Heading Text</h2>
+        <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur facilis, molestias magnam non neque ducimus dignissimos corrupti laboriosam unde? Id possimus quidem aperiam veritatis ut eius adipisci blanditiis saepe unde.
+        </p>
+        <a href="#none">Read More</a>
+      </div>
+    </div>
+
+  </div>
+
+
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script>
+
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://kit.fontawesome.com/4a12b3abf8.js" crossorigin="anonymous"></script>
+
+  <style>
+
+    body {
+      color: #222;
+      background-color: #fff;
+      line-height: 1.5em;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    a {
+      text-decoration: none;
+      color: #222;
+    }
+
+    form {}
+    form input[type=checkbox] {
+      display: none;
+    }
+    form label {
+      display: block;
+    }
+    form label:before {
+      content: '\f00c'; /* 폰트어썸 코드 */
+      font-family: fontawesome;
+      border: 1px solid #333;
+      width: 16px;
+      height: 16px;
+      border-radius: 3px;
+      margin-right: 5px;
+      font-size: 13px;
+      vertical-align: middle;
+      display: inline-block;
+      text-align: center;
+      line-height: 16px;
+      color: transparent;
+      transition: 0.1s;
+    }
+
+    form input[type=checkbox]:checked + label:before {
+      color: #fff;
+      background-color: crimson;
+      border-color: transparent;
+    }
+    /* 마우스를 누르고 있는 상태 */
+    form input[type=checkbox] + label:active:before {
+      transform: scale(0.8);
+    }
+
+
+  </style>
+</head>
+<body>
+
+  <!-- \f00c -->
+  <form>
+    <input type="checkbox" id="chk1" checked>
+    <label for="chk1">HTML</label>
+
+    <input type="checkbox" id="chk2">
+    <label for="chk2">CSS</label>
+
+    <input type="checkbox" id="chk3">
+    <label for="chk3">jQuery</label>
+
+    <input type="checkbox" id="chk4">
+    <label for="chk4">UIKit</label>
+  </form>
+
+
+
+
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script>
+
+
+  </script>
+
+</body>
+</html>

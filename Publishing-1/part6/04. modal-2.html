@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://kit.fontawesome.com/4a12b3abf8.js" crossorigin="anonymous"></script>
+
+  <style>
+
+    body {
+      color: #222;
+      background-color: #fff;
+      line-height: 1.5;
+      height: 100vh;
+      margin: 0;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    a {
+      text-decoration: none;
+      color: #222;
+    }
+    h1, h2, h3, h4, h5, h6, p {
+      font-weight: normal;
+      margin: 0;
+    }
+
+    .modal-notice {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      background-color: rgba(0, 0, 0, .4);
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+    .modal.active {
+      display: block;
+
+    }
+    .modal-content {
+      background-color: #fff;
+      width: 350px;
+      border-radius: 10px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 30px;
+      box-shadow: 0 0 15 rgba(0, 0, 0 .15);
+      text-align: center;
+      animation: slidefade 0.25s linear;
+    }
+
+    .btn-close {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      color: #d8d8d8;
+    }
+
+    .btn-guide {
+      background-color: #616bee;
+      color: #fff;
+      border-radius: 5px;
+      padding: 7px 14px;
+      font: 14px;
+    }
+
+    .modal-content h2 {
+      font-size: 30px;
+      font-weight: 700;
+    }
+    .modal-content p {
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
+    .modal-content img {
+      width: 50%;
+      margin: 20px 0;
+    }
+
+    @keyframes slidefade {
+      0% {
+        opacity: 0;
+        /* margin-top: -30px; */
+        margin-left: -30px; 
+      }
+      100% {
+        opacity: 1;
+        margin: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <a class="modal-notice" href="#none">Open Fade-in Modal with jQuery</a>
+
+  <div class="modal">
+    <div class="modal-content">
+      <a class="btn-close" href="#none">X</a>
+      <h2>Welcome to Teams!</h2>
+      <img src="./img/logo-favicon.png" alt="">
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque, id.
+      </p>
+      <a class="btn-guide" href="#none">Open Guide</a>
+    </div>
+  </div>
+
+
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script>
+
+    $(function() {
+      $('.modal-notice').click(function() {
+        $('.modal').addClass('active');
+      });
+      $('.btn-close').click(function() {
+        $('.modal').removeClass('active');
+      });
+    });
+
+  </script>
+
+</body>
+</html>

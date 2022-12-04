@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://kit.fontawesome.com/4a12b3abf8.js" crossorigin="anonymous"></script>
+
+  <style>
+
+    body {
+      color: #222;
+      background-color: #fff;
+      line-height: 1.5;
+      height: 100vh;
+      margin: 0;
+    }
+    a {
+      text-decoration: none;
+      color: #222;
+    }
+    h1, h2, h3, h4, h5, h6, p {
+      font-weight: normal;
+      margin: 0;
+    }
+
+    .html-accordion {
+      width: 600px;
+      margin: 50px auto;
+      box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+      padding: 40px 20px;
+      border-radius: 10px;
+    }
+    .html-accordion h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    details {
+      padding: 20px;
+    }
+    details[open] {
+      font-weight: bold;
+    }
+    details[open] summary::after {
+      transform: rotateX(180deg);
+    }
+
+    details summary {
+      list-style: none;
+      cursor: pointer;
+    }
+    details summary::after {
+      content: '\f107';
+      font-family: fontawesome;
+      float: right;
+    }
+
+    .detail-content {
+      background-color: #eee;
+      padding: 10px;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+    .detail-content p {}
+
+  </style>
+</head>
+<body>
+
+  <!-- detail, summary 태그를 활용한 html css 어코디언 -->
+
+  <div class="html-accordion">
+    <h1>FAQ Examples with HTML</h1>
+    <details open>
+      <summary>Q) Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, cum.</summary>
+      <div class="detail-content">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione impedit corporis voluptates itaque minus placeat praesentium harum eveniet debitis voluptas.
+        </p>
+      </div>
+    </details>
+    <details>
+      <summary>Q) Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, cum.</summary>
+      <div class="detail-content">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione impedit corporis voluptates itaque minus placeat praesentium harum eveniet debitis voluptas.
+        </p>
+      </div>
+    </details>
+    <details>
+      <summary>Q) Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, cum.</summary>
+      <div class="detail-content">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione impedit corporis voluptates itaque minus placeat praesentium harum eveniet debitis voluptas.
+        </p>
+      </div>
+    </details>
+    <details>
+      <summary>Q) Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, cum.</summary>
+      <div class="detail-content">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione impedit corporis voluptates itaque minus placeat praesentium harum eveniet debitis voluptas.
+        </p>
+      </div>
+    </details>
+  </div>
+
+
+
+
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script>
+
+
+  </script>
+
+</body>
+</html>

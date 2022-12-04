@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://kit.fontawesome.com/4a12b3abf8.js" crossorigin="anonymous"></script>
+
+  <style>
+
+    body {
+      color: #222;
+      background-color: #fff;
+      line-height: 1.5;
+      min-height: 100vh;
+      margin: 0;
+    }
+    a {
+      text-decoration: none;
+      color: #222;
+    }
+    h1, h2, h3, h4, h5, h6, p {
+      font-weight: normal;
+      margin: 0;
+    }
+
+    .contentBox {
+      height: 100vh;
+      background-color: #eee;
+    }
+
+    .parent {
+      border: 1px solid #000;
+      width: 800px;
+      padding: 20px;
+      overflow: hidden;
+      margin: auto;
+    }
+    .parent div {
+      float: left;
+      border: 3px solid #000;
+      width: 50%;
+      height: 200px;
+      box-sizing: border-box;
+      text-align: center;
+      left: 200px;
+      font-size: 30px;
+    }
+    .right {
+      animation: rtr 1s linear both;
+    }
+    .left {
+      animation: ltr 1s linear both;
+    }
+
+    /* 중복사용을 위해 적당한 이름으로 선정 */
+    @keyframes ltr {
+      0% {
+        opacity: 0;
+        transform: translateX(-150px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes rtr {
+      0% {
+        opacity: 0;
+        transform: translateX(150px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="contentBox"></div>
+  <div class="parent">
+    <div class="left ltr wow">left</div>
+    <div class="right rtl wow">right</div>
+  </div>  
+
+
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- https://wowjs.uk/ -->
+  <script src="./wow.min.js"></script>
+
+  <script>
+
+    wow = new WOW(
+    {
+      boxClass: 'wow',  // default
+      offset: 150,  // default (시작 시점 : 150~200)
+      mobile: true, // default (모바일 활성여부 체크 )
+      live: true,  // default
+    }
+  )
+  wow.init();
+
+  </script>
+
+</body>
+</html> 

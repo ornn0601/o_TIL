@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    @import url('https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/fontawesome.min.css');
+
+    body {
+      color: #222;
+      line-height: 1.5em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    a {
+      text-decoration: none;
+      color: #222;
+    }
+
+    .gnb {}
+    .gnb a {
+      font-size: 30px;
+    }
+    .gnb a:before {
+      content: '01';
+      font-size: inherit;
+      background-color: royalblue;
+      color: #fff;
+      width: 50px;
+      height: 50px;
+      text-align: center;
+      line-height: 55px;
+      border-radius: 50%;
+      margin-right: 10px;
+      display: inline-block; /* 높이값이 필요할 때 사용 */
+    }
+    .gnb a:after {
+      content: 'update';
+      font-size: inherit;
+      background-color: crimson;
+      color: #fff;
+      margin-left: 10px;
+      padding: 2px 4px;
+      border-radius: 3px;
+    }
+
+    /* tip : 요소간의 수평을 맞추기 위해선 본문과 가상콘텐츠의 Font-size가 동일해야한다. */
+
+  </style>
+</head>
+<body>
+
+  <div class="gnb">
+    <a href="#none">CodingWorks online class</a>
+  </div>
+
+
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script>
+
+
+  </script>
+
+</body>
+</html>

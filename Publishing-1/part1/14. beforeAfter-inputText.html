@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://kit.fontawesome.com/4a12b3abf8.js" crossorigin="anonymous"></script>
+
+  <style>
+
+    body {
+      color: #222;
+      line-height: 1.5em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    a {
+      text-decoration: none;
+      color: #222;
+    }
+
+    form {}
+    form .item {
+      width: 300px;
+      margin: 10px;
+      position: relative;
+    }
+    form .item input {
+      box-sizing: border-box;
+      border: 1px solid lightgray;
+      height: 50px;
+      width: inherit;
+      border-radius: 5px;
+      padding: 10px;
+      padding-left: 50px;
+      outline: none;
+      transition: 0.3s;
+    }
+
+    form .item .fa-solid {
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: gray;
+      font-size: 20px;
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    /* input에 클릭이 된다면 */
+    form .item input:focus {
+      border: 1px solid dodgerblue;
+      box-shadow: 0 0 5px dodgerblue;
+    }
+
+    /* 클릭 상태에서 플레이스홀더 감추기 */
+    form .item input:focus::placeholder {
+      visibility: hidden;
+    }
+
+    /* 아이콘 색상 변경 */
+    /* 인접선택자 : 아래의 인접한 형제 요소 선택 */
+
+    /* 1 */
+    form.info1 .item input:focus + .fa-solid {
+      color: dodgerblue;
+    }
+
+    /* 2 */
+    form.info2 .item input {
+      padding-left: 60px;
+    }
+    form.info2 .item .fa-solid {
+      color: #fff;
+      background-color: gray;
+      border-radius: 5px 0 0 5px;
+    }
+    form.info2 .item input:focus + .fa-solid {
+      background-color: dodgerblue;
+    }
+
+
+  </style>
+</head>
+<body>
+
+  <form action="" class="info">
+    <div class="item">
+      <input type="text" placeholder="Your name">
+      <i class="fa-solid fa-user"></i>
+    </div>
+    <div class="item">
+      <input type="email" placeholder="Email">
+      <i class="fa-solid fa-envelope"></i>
+    </div>
+    <div class="item">
+      <input type="tel" placeholder="Phone number">
+      <i class="fa-solid fa-phone"></i>
+    </div>
+  </form>
+
+  <form action="" class="info2">
+    <div class="item">
+      <input type="text" placeholder="Your name">
+      <i class="fa-solid fa-user"></i>
+    </div>
+    <div class="item">
+      <input type="email" placeholder="Email">
+      <i class="fa-solid fa-envelope"></i>
+    </div>
+    <div class="item">
+      <input type="tel" placeholder="Phone number">
+      <i class="fa-solid fa-phone"></i>
+    </div>
+  </form>
+
+
+
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script>
+
+
+  </script>
+
+</body>
+</html>

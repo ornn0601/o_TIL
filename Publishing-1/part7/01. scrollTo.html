@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://kit.fontawesome.com/4a12b3abf8.js" crossorigin="anonymous"></script>
+
+  <style>
+
+    body {
+      color: #222;
+      background-color: #fff;
+      line-height: 1.5;
+      height: 100vh;
+      margin: 0;
+    }
+    a {
+      text-decoration: none;
+      color: #222;
+    }
+    h1, h2, h3, h4, h5, h6, p {
+      font-weight: normal;
+      margin: 0;
+    }
+
+    /* ie 지원 안함 */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .container {}
+    header {
+      padding-bottom: 50vh;
+    }
+    section {
+      padding: 50vh 0;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <a href="#part1">part1</a>
+      <a href="#part2">part1</a>
+      <a href="#part3">part1</a>
+    </header>
+    <section>
+      <h1 id="part1">part1</h1>
+      <p>내용</p>
+      <a class="btn-gotoTop" href="$">Go To Top</a>
+    </section>
+  </div>
+
+
+
+
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script>
+
+    // $('header a, .btn-gotoTop').click(function(e) {
+    //   $.scrollTo(this.hash || 0, 900); /* 900 : 속도 */
+    //   e.preventDefault();
+    // });
+    $('header a').click(function(e) {
+      $.scrollTo(this.hash || 0, 900); /* 900 : 속도 */
+      e.preventDefault();
+    });
+    $('.btn-gotoTop').click(function(e) {
+      e.preventDefault();
+      $('html, body').animate( { scrollTop : 0 }, 900 );
+	    return false;
+    });
+
+
+  </script>
+
+</body>
+</html>

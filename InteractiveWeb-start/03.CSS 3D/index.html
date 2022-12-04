@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS 3D</title>
+
+  <style>
+    .world {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 80vw;
+      height: 80vh;
+      background: #fff000;
+
+      perspective: 500px; /* 눈에서의 거리, 가까이 있을 수록 효과가 극적으로 보인다. */
+
+    }
+    .card {
+      position: relative;
+      width: 100px;
+      height: 150px;
+      margin: 1em;
+
+      /*transform: perspective(500px) rotateY(45deg); 각각의 카드에 적용 */
+      transform: rotateY(0deg);
+      transition: 1s;
+      transform-style: preserve-3d; /* 3d효과 부여(IE 지원 안함) */
+      transform-origin: center; /* 회전 중심 축 설정 */
+    }
+
+    .card-side {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 0.5em; /* em : 폰트 사이즈의 변화에 따라 수치를 변경한다. */
+      font-size: 1.5rem;
+      -webkit-backface-visibility: hidden; /* 사파리 */
+      backface-visibility: hidden; /* 뒷면 감추기 */
+    }
+
+    .card-side-front {
+      z-index: 1;
+      background: white;
+    }
+    .card-side-back {
+      background: red;
+      transform: rotateY(180deg);
+    }
+
+    /* 뒤깁기 */
+    .world:hover .card {
+      transform: rotateY(-180deg);
+    }
+
+    /* ie 대응 */
+    .world-ie {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 80vw;
+      height: 80vh;
+      background: purple;
+      perspective: 500px;
+    }
+
+    .card-side-ie {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100px;
+      height: 150px;
+      margin: -75px 0 0 -50px;
+      border-radius: 0.5em;
+      font-size: 1.5rem;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      transition: 1s;
+    }
+
+    .card-side-front-ie {
+      background: white;
+      z-index: 1;
+    }
+    .card-side-back-ie {
+      background: red;
+      transform: rotateY(180deg);
+    }
+
+    .world-ie:hover .card-side-front-ie{
+      transform: rotateY(180deg);
+    }
+    .world-ie:hover .card-side-back-ie {
+      transform: rotateY(360deg);
+    }
+
+  </style>
+
+</head>
+<body>
+  
+  <!-- 공간을 3D로 만들어야 한다. -->
+  <div class="world">
+    <div class="card">
+      <div class="card-side card-side-front">F</div>
+      <div class="card-side card-side-back">B</div>
+    </div>
+  </div>
+
+  <!-- IE 대응 -->
+  <div class="world-ie">
+    <div class="card-side-ie card-side-front-ie">F</div>
+    <div class="card-side-ie card-side-back-ie">B</div>
+  </div>
+
+</body>
+</html>

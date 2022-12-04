@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://kit.fontawesome.com/4a12b3abf8.js" crossorigin="anonymous"></script>
+
+  <style>
+
+    body {
+      color: #222;
+      background-color: #fff;
+      line-height: 1.5em;
+      margin: 0;
+    }
+    a {
+      text-decoration: none;
+      color: #222;
+    }
+
+    .tab-inner {}
+
+    input[name="tabmenu"] {
+      display: none;
+    }
+
+    .tabs {
+      overflow: hidden;
+      position: relative;
+      height: 100vh;
+    }
+    .tabs .items {
+      height: 100vh;
+      width: 300%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: 0.5s;
+    }
+    .tabs .items div {
+      float: left;
+      height: 100vh;
+      width: 33.3333%;
+      box-sizing: border-box;
+      position: relative;
+    }
+
+    .tabs .items div:nth-child(1) {
+      background: url('./images/photo-01.jpg') no-repeat center center;
+      background-size: cover;
+      background-attachment: fixed; /* 배경 고정 */
+    }
+    .tabs .items div:nth-child(2) {
+      background: url('./images/photo-02.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+    .tabs .items div:nth-child(3) {
+      background: url('./images/photo-03.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    .tabs .items div:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .tabs .items div:nth-child(1):before {
+      background: linear-gradient(135deg, gold, transparent);
+    }
+    .tabs .items div:nth-child(2):before {
+      background: linear-gradient(135deg, crimson, transparent);
+    }
+    .tabs .items div:nth-child(3):before {
+      background: linear-gradient(135deg, royalblue, transparent);
+    }
+
+    .tabs .items div h1 {
+      font-size: 120px;
+      font-weight: 400;
+      color: #fff;
+      text-align: center;
+      transform: translateY(-200px);
+      opacity: 0;
+      transition: 1s;
+      transition-delay: 0.5s;
+      position: relative; /* 가상요소보다 상위에 위치하기 */
+    }
+
+    .btn {
+      position: absolute;
+      /* top: 0; */
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      background-color: rgba(0, 0, 0, .3);
+    }
+    .btn label {
+      display: inline-block;
+      cursor: pointer;
+      color: #fff;
+      margin: 0 15px;
+    }
+
+    /* checked */
+    input[id=tab1]:checked ~ .tabs .items {
+      left: 0;
+    }
+    input[id=tab2]:checked ~ .tabs .items {
+      left: -100%;
+    }
+    input[id=tab3]:checked ~ .tabs .items {
+      left: -200%;
+    }
+
+    /* dot */
+    input[id=tab1]:checked ~ .btn label[for=tab1],
+    input[id=tab2]:checked ~ .btn label[for=tab2],
+    input[id=tab3]:checked ~ .btn label[for=tab3] {
+      color: crimson;
+    }
+
+    input[id=tab1]:checked ~ .tabs .items div:nth-child(1) h1,
+    input[id=tab2]:checked ~ .tabs .items div:nth-child(2) h1,
+    input[id=tab3]:checked ~ .tabs .items div:nth-child(3) h1 {
+      transform: translateY(100px);
+      opacity: 1;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="tab-inner">
+    <input type="radio" name="tabmenu" id="tab1" checked>
+    <input type="radio" name="tabmenu" id="tab2">
+    <input type="radio" name="tabmenu" id="tab3">
+
+    <div class="tabs">
+      <div class="items">
+        <div>
+          <h1>Slide Content 01</h1>
+        </div>
+        <div>
+          <h1>Slide Content 02</h1>
+        </div>
+        <div>
+          <h1>Slide Content 03</h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="btn">
+      <label for="tab1">Graphic</label>
+      <label for="tab2">Web Publishing</label>
+      <label for="tab3">Logo & CI</label>
+    </div>
+
+  </div>  
+
+
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script>
+
+
+  </script>
+
+</body>
+</html>

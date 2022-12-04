@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    body {
+      color: #222;
+      line-height: 1.5em;
+    }
+    a {
+      text-decoration: none;
+      color: #222;
+    }
+
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .icon {
+      /* border: 1px solid red; */
+      width: 125px;
+      height: 125px;
+      margin: 10px;
+      position: relative;
+    }
+    .icon img {
+      width: 100%;
+    }
+    .icon span {
+      /* display: none; */
+      position: absolute;
+      top: -80px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #000;
+      color: #fff;
+      width: 300px;
+      text-align: center;
+      border-radius: 5px;
+      padding: 10px;
+      opacity: 0;
+      transition: 0.3s;
+      visibility: hidden; /* hover 영역에서 제외 */
+    }
+    .icon span:after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 50%;
+      transform: translateX(-50%) rotate(45deg);
+      background-color: #000;
+      width: 10px;
+      height: 10px;
+    }
+
+    .icon:hover span {
+      opacity: 1;
+      visibility: visible;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="icon">
+      <img src="./images/icon-01.png" alt="icon-01">
+      <span>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</span>
+    </div>
+
+    <div class="icon">
+      <img src="./images/icon-02.png" alt="icon-02">
+      <span>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</span>
+    </div>
+
+    <div class="icon">
+      <img src="./images/icon-03.png" alt="icon-03">
+      <span>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</span>
+    </div>
+
+    <div class="icon">
+      <img src="./images/icon-04.png" alt="icon-04">
+      <span>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</span>
+    </div>
+  </div>
+
+
+
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script>
+
+
+  </script>
+
+</body>
+</html>

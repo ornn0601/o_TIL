@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    @import url('https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/fontawesome.min.css');
+
+    body {
+      color: #fff;
+      line-height: 1.5em;
+      background-color: #222;
+    }
+    a {
+      text-decoration: none;
+      color: #222;
+    }
+    
+    .items {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      text-align: center;
+    }
+    .items .item {
+      width: 300px;
+      height: 200px;
+      display: inline-block;
+      position: relative;
+      margin: 10px;
+    }
+
+    .items .item .front,
+    .items .item .back {
+      position: absolute;
+      width: 100%;
+      height: inherit;
+      text-align: center;
+      transition: 0.5s;
+      top: 0;
+      left: 0;
+      box-sizing: border-box;
+    }
+    .items .item .front {
+      background-color: #333;
+      z-index: 1;
+    }
+    /* .items .item .front img {
+      width: 100%;
+    } */
+    .items .item .front h2 {
+      margin: 0;
+    }
+
+    .items .item .back {
+      background-color: #fff;
+      color: #000;
+      opacity: 0;
+      padding: 20px;
+    }
+    .items .item .back p {
+      margin: 0 0 10px 0;
+    }
+    .items .item .back a {
+      background-color: yellowgreen;
+      color: #fff;
+      padding: 5px 10px;
+      border-radius: 20px;
+    }
+
+    .items .item .back a:hover {
+      background-color: #000;
+    }
+
+    .items .item:hover .front {
+      top: -50%;
+    }
+    .items .item:hover .front img {
+      animation: ani 1s linear infinite;
+    }
+    .items .item:hover .back {
+      top: 50%;
+      opacity: 1;
+    }
+
+    @keyframes ani {
+      0%, 100% {
+        transform: scale(0.9);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="items">
+
+    <div class="item">
+      <div class="front">
+        <img src="./images/space-01.png" alt="space-01">
+        <h2>Mars</h2>
+      </div>
+      <div class="back">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam neque numquam quis, tenetur officia nemo obcaecati mollitia aperiam magni iure!</p>
+        <a href="#none">Read More</a>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="front">
+        <img src="./images/space-02.png" alt="space-02">
+        <h2>Mars</h2>
+      </div>
+      <div class="back">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam neque numquam quis, tenetur officia nemo obcaecati mollitia aperiam magni iure!</p>
+        <a href="#none">Read More</a>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="front">
+        <img src="./images/space-03.png" alt="space-03">
+        <h2>Mars</h2>
+      </div>
+      <div class="back">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam neque numquam quis, tenetur officia nemo obcaecati mollitia aperiam magni iure!</p>
+        <a href="#none">Read More</a>
+      </div>
+    </div>
+
+  </div>
+
+
+
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script>
+
+
+  </script>
+
+</body>
+</html>

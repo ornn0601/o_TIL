@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://kit.fontawesome.com/4a12b3abf8.js" crossorigin="anonymous"></script>
+
+  <style>
+
+    body {
+      color: #222;
+      margin: 0;
+      line-height: 1.5em;
+      height: 100vh;
+      background-color: #fff;
+    }
+    a {
+      text-decoration: none;
+      color: #222;
+    }
+
+    .gallery {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      height: 100%;
+    }
+    .gallery li {
+      border-right: 5px solid #000;
+      flex: 1;
+      transition: 0.5s;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .gallery li:last-child {
+      border-right: none;
+    }
+
+    .gallery li:nth-child(1) {
+      background: url('./images/artistic-image-01.jpg') no-repeat center center;
+    }
+    .gallery li:nth-child(2) {
+      background: url('./images/artistic-image-02.jpg') no-repeat center center;
+    }
+    .gallery li:nth-child(3) {
+      background: url('./images/artistic-image-03.jpg') no-repeat center center;
+    }
+    .gallery li:nth-child(4) {
+      background: url('./images/artistic-image-04.jpg') no-repeat center center;
+    }
+    .gallery li:nth-child(5) {
+      background: url('./images/artistic-image-05.jpg') no-repeat center center;
+    }
+
+    /* content */
+    .content {
+      position: absolute;
+      background-color: #000;
+      color: #fff;
+      text-align: center;
+      bottom: -100%;
+      left: 0;
+      transition: 0.5s;
+      padding: 0 20px 50px;
+      box-sizing: border-box;
+    }
+    .content:before {
+      content: '';
+      position: absolute;
+      background-color: #000;
+      width: 100%;
+      height: 100px;
+      left: 0;
+      top: -10px;
+      transform-origin: left bottom;
+      transform: rotate(-3deg) scale(1.3);
+      z-index: -1;
+    }
+
+
+    .content h2 {}
+    .content p {}
+
+    .content .sns {}
+    .content .sns a {
+      color: #333;
+    }
+    .content .sns a .fa-brands {
+      font-size: 30px;
+      margin: 0 5px;
+    }
+
+
+    /* hover */
+    .gallery:hover li {
+      flex: 1;
+    }
+    .gallery li:hover {
+      flex: 3;
+      filter: grayscale(1); /* 0 ~ 1 */
+    }
+    .gallery li:hover .content {
+      bottom: 0;
+      transition-delay: 0.1s;
+    }
+
+  </style>
+</head>
+<body>
+
+  <ul class="gallery">
+    <li>
+      <div class="content">
+        <h2>Uploads made easy</h2>
+        <p>Use Spotify for Artists to upload your releases. With previews and simple edits, you can control exactly how your music appears to divsteners.</p>
+        <div class="sns">
+          <a href="#none"><i class="fa-brands fa-facebook-square"></i></a>
+          <a href="#none"><i class="fa-brands fa-instagram-square"></i></a>
+          <a href="#none"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="#none"><i class="fa-brands fa-google-plus-square"></i></a>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="content">
+        <h2>Make release day count</h2>
+        <p>Let the world know about your music. With Spotify for Artists, you can submit to playdivsts and update your profile to reflect your new sound.</p>
+        <div class="sns">
+          <a href="#none"><i class="fa-brands fa-facebook-square"></i></a>
+          <a href="#none"><i class="fa-brands fa-instagram-square"></i></a>
+          <a href="#none"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="#none"><i class="fa-brands fa-google-plus-square"></i></a>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="content">
+        <h2>Get your royalties, fast</h2>
+        <p>Recording royalties? Pubdivshing royalties? Matt and Kim, Sheryl Crow, and Cienfue weigh in on the importance of royalties</p>
+        <div class="sns">
+          <a href="#none"><i class="fa-brands fa-facebook-square"></i></a>
+          <a href="#none"><i class="fa-brands fa-instagram-square"></i></a>
+          <a href="#none"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="#none"><i class="fa-brands fa-google-plus-square"></i></a>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="content">
+        <h2>Make Spotify yours</h2>
+        <p>180 mildivon fans are waiting for you. Sign up to Spotify for Artists and make the most of your music.</p>
+        <div class="sns">
+          <a href="#none"><i class="fa-brands fa-facebook-square"></i></a>
+          <a href="#none"><i class="fa-brands fa-instagram-square"></i></a>
+          <a href="#none"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="#none"><i class="fa-brands fa-google-plus-square"></i></a>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="content">
+        <h2>The Best Advice</h2>
+        <p>Rapper and savvy business mogdiv Rick Ross gets straight to the point when it comes to the best advice he's ever received.</p>
+        <div class="sns">
+          <a href="#none"><i class="fa-brands fa-facebook-square"></i></a>
+          <a href="#none"><i class="fa-brands fa-instagram-square"></i></a>
+          <a href="#none"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="#none"><i class="fa-brands fa-google-plus-square"></i></a>
+        </div>
+      </div>
+    </li>
+  </ul>
+
+
+
+
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script>
+
+
+  </script>
+
+</body>
+</html>

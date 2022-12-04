@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://kit.fontawesome.com/4a12b3abf8.js" crossorigin="anonymous"></script>
+
+  <style>
+
+    body {
+      color: #222;
+      background-color: #fff;
+      line-height: 1.5em;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    a {
+      text-decoration: none;
+      color: #222;
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .container .card {
+      margin: 10px;
+      position: relative;
+      overflow: hidden;
+      transition: 0.5s;
+      line-height: 0; /* 이미지 라인하이드 삭제 */
+    }
+
+    .container .card img {}
+    .container .card h2 {
+      font-size: 30px;
+      line-height: 1.2;
+    }
+    .container .card h2 span {
+      font-size: 14px;
+      display: block;
+      color: gold;
+      margin-top: 10px;
+    }
+
+    .container .card .content {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      padding: 20px;
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+      background: linear-gradient(to top, crimson, transparent);
+      color: #fff;
+      padding-top: 130px;
+      text-align: center;
+      transition: 0.5s;
+      line-height: 1.5;
+    }
+    .container .card .content .sns {}
+    .container .card .content .sns a {
+      color: #fff;
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      font-size: 13px;
+      line-height: 20px;
+      text-align: center;
+    }
+
+    .container .card:hover {
+      transform: translateY(-20px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, .20);
+    }
+    .container .card:hover .content {
+      top: 0;
+    }
+
+    .container .card:nth-child(1) .content {
+      background: linear-gradient(to top, crimson, transparent);
+    }
+    .container .card:nth-child(2) .content {
+      background: linear-gradient(to top, dodgerblue, transparent);
+    }
+    .container .card:nth-child(3) .content {
+      background: linear-gradient(to top, yellowgreen, transparent);
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <div class="card">
+      <img src="./img/crew-01.jpg" alt="">
+      <div class="content">
+        <h2>Andrew Yu <span>Developer</span></h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed cum earum officia praesentium? Minima, culpa</p>
+        <div class="sns">
+          <a href="#none"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#none"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#none"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <img src="./img/crew-02.jpg" alt="">
+      <div class="content">
+        <h2>Andrew Yu <span>Developer</span></h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed cum earum officia praesentium? Minima, culpa</p>
+        <div class="sns">
+          <a href="#none"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#none"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#none"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <img src="./img/crew-03.jpg" alt="">
+      <div class="content">
+        <h2>Andrew Yu <span>Developer</span></h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed cum earum officia praesentium? Minima, culpa</p>
+        <div class="sns">
+          <a href="#none"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#none"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#none"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script>
+
+
+  </script>
+
+</body>
+</html>

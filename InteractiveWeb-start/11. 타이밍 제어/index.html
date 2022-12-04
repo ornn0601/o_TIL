@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>타이밍 제어</title>
+  <style>
+
+  </style>
+</head>
+<body>
+  <button class="btn">취소</button>
+  
+
+  <script>
+    let timeId;
+    let n = 0;
+    const btn = document.querySelector('.btn');
+
+    function sample() {
+      n++;
+      console.log(n);
+      if (n > 200) {
+        return;
+      }
+
+      // 반복시킬 요소 안에 작성
+      timeId = requestAnimationFrame(sample);
+    }
+    sample();
+
+    // 타임아웃 실행
+    // timeId = setTimeout(sample, 3000);
+
+    // 타임아웃 삭제
+    // clearTimeout(timeId);
+
+    // 클릭을 통해 셋타임 아웃 삭제
+    // btn.addEventListener('click', function() {
+    //   clearTimeout(timeId);
+    // });
+
+
+    // timeId = setInterval(sample, 1000);
+    // btn.addEventListener('click', function() {
+    //   clearInterval(timeId);
+    // });
+
+    // 클릭을 통해 셋타임 아웃 삭제
+    btn.addEventListener('click', function() {
+      clearAnimationFrame(timeId);
+    });
+
+
+
+  </script>
+</body>
+</html>

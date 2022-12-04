@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://kit.fontawesome.com/4a12b3abf8.js" crossorigin="anonymous"></script>
+
+  <style>
+
+    body {
+      color: #222;
+      background-color: #d8d8d8;
+      line-height: 1.5em;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    a {
+      text-decoration: none;
+      color: #222;
+    }
+
+    section {
+      width: 800px;
+    }
+    .heading {}
+    .heading h1 {
+      font-size: 30px;
+      text-align: center;
+    }
+    .heading h1 span {
+      color: crimson;
+    }
+
+    .heading input[type=text] {
+      width: 100%;
+      outline: none;
+      padding: 10px;
+      padding-left: 35px;
+      box-sizing: border-box;
+      border: none;
+      border-bottom: 2px solid #ddd;
+      background: #fff url('./img/search-icon.png') no-repeat center left 5px;
+      background-size: 23px;
+    }
+    .heading input[type=text]::placeholder {
+      font-style: italic;
+      opacity: 1;
+      transition: 0.3s;
+    }
+    .heading input[type=text]:focus::placeholder {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .tab-inner {
+      margin-top: 30px;
+    }
+    .btn {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      overflow: hidden;
+      margin-left: 10px;
+    }
+    .btn li {
+      float: left;
+      background-color: #eee;
+      width: 120px;
+      text-align: center;
+      cursor: pointer;
+      border-right: 1px solid #ddd;
+      padding: 5px;
+      box-sizing: border-box;
+      border-top: 2px solid transparent;
+    }
+    .btn li:last-child {
+      width: 170px;
+      border-right: none;
+    }
+    .btn li:hover,
+    .btn li.active {
+      background-color: #fff;
+      border-top: 2px solid crimson;
+    }
+
+    .tabs {}
+    .tabs div {
+      background-color: #fff;
+      padding: 20px;
+      box-sizing: border-box;
+      /* height: 200px; */
+      display: none;
+    }
+    .tabs div.active {
+      display: block;
+    }
+
+    /* tab content */
+    .tabs div h2 {
+      text-align: center;
+    }
+    .tabs div img {
+      width: 150px;
+      float: left;
+      margin-right: 30px;
+    }
+    .tabs div p {
+      overflow: hidden;
+    }
+
+
+  </style>
+</head>
+<body>
+
+  <section>
+    <div class="heading">
+      <h1><span>코딩웍스</span>, 프론트엔드 퍼블리셔 취업을 위한 실전 퍼블리싱 강좌</h1>
+      <input type="text" placeholder="What are you looking for?">
+    </div>
+    <div class="tab-inner">
+      <ul class="btn">
+        <li class="active" data-alt="tab1">HTML</li>
+        <li data-alt="tab2">CSS3</li>
+        <li data-alt="tab3">JQUERY</li>
+        <li data-alt="tab4">JAVASCRIPT</li>
+        <li data-alt="tab5">CSS FRAMEWORKS</li>
+      </ul>
+      <div class="tabs">
+        <div id="tab1" class="active">
+          <h2>HTML5</h2>
+          <img src="./img/platform-logo-01.png" alt="platform-logo-01">
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta non repudiandae maiores eius ipsa perferendis eligendi consectetur aspernatur vero, tenetur rerum est ea velit expedita quisquam, dolorum aliquid nostrum! Doloremque officiis harum autem, cupiditate iure, recusandae velit fugit quibusdam placeat nisi molestias earum aspernatur maiores asperiores officia optio deserunt perferendis magnam maxime non laudantium exercitationem minima laboriosam. Officiis, fugit iusto! Adipisci, neque accusamus. Earum aliquid ipsum beatae vel ex voluptates officiis laboriosam deserunt illum repellat non quos, sapiente impedit veniam nam possimus facere! Molestiae delectus illum nemo temporibus dolores, earum minus consectetur architecto omnis rerum corporis? Ipsam dolore sapiente soluta.</p>
+        </div>
+        <div id="tab2">
+          <h2>CSS3</h2>
+          <img src="./img/platform-logo-02.png" alt="platform-logo-02">
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta non repudiandae maiores eius ipsa perferendis eligendi consectetur aspernatur vero, tenetur rerum est ea velit expedita quisquam, dolorum aliquid nostrum! Doloremque officiis harum autem, cupiditate iure, recusandae velit fugit quibusdam placeat nisi molestias earum aspernatur maiores asperiores officia optio deserunt perferendis magnam maxime non laudantium exercitationem minima laboriosam. Officiis, fugit iusto! Adipisci, neque accusamus. Earum aliquid ipsum beatae vel ex voluptates officiis laboriosam deserunt illum repellat non quos, sapiente impedit veniam nam possimus facere! Molestiae delectus illum nemo temporibus dolores, earum minus consectetur architecto omnis rerum corporis? Ipsam dolore sapiente soluta.</p>
+        </div>
+        <div id="tab3">
+          <h2>JQUERY</h2>
+          <img src="./img/platform-logo-03.png" alt="platform-logo-03">
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta non repudiandae maiores eius ipsa perferendis eligendi consectetur aspernatur vero, tenetur rerum est ea velit expedita quisquam, dolorum aliquid nostrum! Doloremque officiis harum autem, cupiditate iure, recusandae velit fugit quibusdam placeat nisi molestias earum aspernatur maiores asperiores officia optio deserunt perferendis magnam maxime non laudantium exercitationem minima laboriosam. Officiis, fugit iusto! Adipisci, neque accusamus. Earum aliquid ipsum beatae vel ex voluptates officiis laboriosam deserunt illum repellat non quos, sapiente impedit veniam nam possimus facere! Molestiae delectus illum nemo temporibus dolores, earum minus consectetur architecto omnis rerum corporis? Ipsam dolore sapiente soluta.</p>
+        </div>
+        <div id="tab4">
+          <h2>JAVASCRIPT</h2>
+          <img src="./img/platform-logo-04.png" alt="platform-logo-04">
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta non repudiandae maiores eius ipsa perferendis eligendi consectetur aspernatur vero, tenetur rerum est ea velit expedita quisquam, dolorum aliquid nostrum! Doloremque officiis harum autem, cupiditate iure, recusandae velit fugit quibusdam placeat nisi molestias earum aspernatur maiores asperiores officia optio deserunt perferendis magnam maxime non laudantium exercitationem minima laboriosam. Officiis, fugit iusto! Adipisci, neque accusamus. Earum aliquid ipsum beatae vel ex voluptates officiis laboriosam deserunt illum repellat non quos, sapiente impedit veniam nam possimus facere! Molestiae delectus illum nemo temporibus dolores, earum minus consectetur architecto omnis rerum corporis? Ipsam dolore sapiente soluta.</p>
+        </div>
+        <div id="tab5">
+          <h2>CSS FRAMEWORKS</h2>
+          <img src="./img/platform-logo-05.png" alt="platform-logo-05">
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta non repudiandae maiores eius ipsa perferendis eligendi consectetur aspernatur vero, tenetur rerum est ea velit expedita quisquam, dolorum aliquid nostrum! Doloremque officiis harum autem, cupiditate iure, recusandae velit fugit quibusdam placeat nisi molestias earum aspernatur maiores asperiores officia optio deserunt perferendis magnam maxime non laudantium exercitationem minima laboriosam. Officiis, fugit iusto! Adipisci, neque accusamus. Earum aliquid ipsum beatae vel ex voluptates officiis laboriosam deserunt illum repellat non quos, sapiente impedit veniam nam possimus facere! Molestiae delectus illum nemo temporibus dolores, earum minus consectetur architecto omnis rerum corporis? Ipsam dolore sapiente soluta.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script>
+
+    $('.btn li').click(function() {
+      // 버튼
+      $(this).addClass('active');
+      $(this).siblings().removeClass('active');
+
+      // 내용
+      let result = $(this).attr('data-alt');
+      $('.tabs div').removeClass('active');
+      $('#' + result).addClass('active');
+    });
+
+
+  </script>
+
+</body>
+</html>

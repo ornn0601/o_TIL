@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://kit.fontawesome.com/4a12b3abf8.js" crossorigin="anonymous"></script>
+
+  <style>
+
+    body {
+      color: #222;
+      background-color: #fff;
+      line-height: 1.5em;
+      margin: 0;
+    }
+    a {
+      text-decoration: none;
+      color: #222;
+    }
+
+    .tab-inner {}
+
+    .tab-inner input[name="tabmenu"] {
+      display: none;
+    }
+
+    .tab-inner .tabs {
+      overflow: hidden;
+      position: relative;
+      height: 100vh;
+    }
+    .tab-inner .tabs .items {
+      height: 100vh;
+      width: 300%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: 0.5s;
+    }
+    .tab-inner .tabs .items div {
+      float: left;
+      height: 100vh;
+      width: 33.3333%;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .tab-inner .tabs .items div:nth-child(1) {
+      background-color: teal;
+    }
+    .tab-inner .tabs .items div:nth-child(2) {
+      background-color: dodgerblue;
+    }
+    .tab-inner .tabs .items div:nth-child(3) {
+      background-color: yellowgreen;
+    }
+
+    .tab-inner .tabs .items div h1 {
+      font-size: 50px;
+    }
+
+    .tab-inner .btn {
+      position: absolute;
+      bottom: 20px;
+      left: 0;
+      width: 100%;
+      text-align: center;
+    }
+    .tab-inner .btn label {
+      display: inline-block;
+      height: 5px;
+      width: 50px;
+      background-color: #fff;
+      cursor: pointer;
+    }
+
+    /* checked */
+    input[id=tab1]:checked ~ .tabs .items {
+      left: 0;
+    }
+    input[id=tab2]:checked ~ .tabs .items {
+      left: -100%;
+    }
+    input[id=tab3]:checked ~ .tabs .items {
+      left: -200%;
+    }
+
+    /* dot */
+    input[id=tab1]:checked ~ .btn label[for=tab1],
+    input[id=tab2]:checked ~ .btn label[for=tab2],input[id=tab3]:checked ~ .btn label[for=tab3] {
+      background-color: #000;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="tab-inner">
+    <input type="radio" name="tabmenu" id="tab1" checked>
+    <input type="radio" name="tabmenu" id="tab2">
+    <input type="radio" name="tabmenu" id="tab3">
+
+    <div class="tabs">
+      <div class="items">
+        <div>
+          <h1>Slide Content 01</h1>
+        </div>
+        <div>
+          <h1>Slide Content 02</h1>
+        </div>
+        <div>
+          <h1>Slide Content 03</h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="btn">
+      <label for="tab1"></label>
+      <label for="tab2"></label>
+      <label for="tab3"></label>
+    </div>
+
+  </div>  
+
+
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script>
+
+
+  </script>
+
+</body>
+</html>

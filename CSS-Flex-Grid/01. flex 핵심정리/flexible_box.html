@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Flex</title>
+  <link rel="stylesheet" href="default.css">
+
+  <style>
+    .flex-container {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background-color: green;
+    }
+    .flex-item {
+      flex: 1 auto;
+      color: #fff;
+    }
+
+    @media (min-width: 600px) {
+      .flex-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+      .flex-item {
+        width: 50%;
+        flex: 1 auto;
+      }
+    }
+
+    @media (min-width: 800px) {
+      .flex-item {
+        width: 33.33333%;
+      }
+    }
+
+
+  </style>
+
+</head>
+<body>
+
+  <div class="flex-container">
+    <div class="flex-item">AAAA</div>
+    <div class="flex-item">BBBBB</div>
+    <div class="flex-item">CCCC</div>
+    <div class="flex-item">DDDD</div>
+    <div class="flex-item">EEEE</div>
+    <div class="flex-item">FFFF</div>
+    <div class="flex-item">GGGG</div>
+    <div class="flex-item">HHHH</div>
+    <div class="flex-item">IIII</div>
+  </div>
+
+</body>
+</html>

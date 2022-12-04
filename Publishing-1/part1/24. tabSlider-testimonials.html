@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://kit.fontawesome.com/4a12b3abf8.js" crossorigin="anonymous"></script>
+
+  <style>
+
+    body {
+      color: #222;
+      background-color: #fff;
+      line-height: 1.5em;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    a {
+      text-decoration: none;
+      color: #222;
+    }
+
+    .tab-inner {}
+    .tab-inner input[name=tabmenu] {
+      display: none;
+    }
+
+    .tab-inner h1 {
+      text-align: center;
+    }
+
+    .tab-inner .tabs {
+      /* border: 1px solid red; */
+      width: 800px;
+      height: 400px;
+      position: relative;
+      overflow: hidden;
+    }
+    .tab-inner .tabs .items {
+      width: 2400px;
+      height: 400px; 
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: 0.5s;
+      text-align: center;
+    }
+    .tab-inner .tabs .items .item {
+      /* border: 1px solid blue; */
+      width: 800px;
+      height: 400px;
+      box-sizing: border-box;
+      float: left;
+      text-align: center;
+      padding: 50px;
+    }
+    .tab-inner .tabs .items .item img {
+      width: 100px;
+      border-radius: 50%;
+    }
+    .tab-inner .tabs .items .item p {}
+    .tab-inner .tabs .items .item p b {
+      display: block;
+    }
+    .tab-inner .tabs .items .item p span {
+      color: orange;
+    }
+
+    .tab-inner .btn {
+      text-align: center;
+    }
+    .tab-inner .btn label {
+      width: 10px;
+      height: 10px;
+      background-color: lightgray;
+      display: inline-block;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    /* checked */
+    input[id=tab1]:checked ~ .tabs .items {
+      left: 0;
+    }
+    input[id=tab2]:checked ~ .tabs .items {
+      left: -800px;
+    }
+    input[id=tab3]:checked ~ .tabs .items {
+      left: -1600px;
+    }
+
+    input[id=tab1]:checked ~ .btn label[for=tab1],
+    input[id=tab2]:checked ~ .btn label[for=tab2],
+    input[id=tab3]:checked ~ .btn label[for=tab3] {
+      background-color: crimson;
+      border-radius: 50%;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="tab-inner">
+
+    <input type="radio" name="tabmenu" id="tab1" checked>
+    <input type="radio" name="tabmenu" id="tab2">
+    <input type="radio" name="tabmenu" id="tab3">
+
+    <h1>Testimonials</h1>
+
+    <div class="tabs">
+      <div class="items">
+        <div class="item">
+          <img src="./images/face-01.jpg" alt="face-01">
+          <p>
+            As we all know, it’s easy for marketers to brag about how great their product or service is. Writing compelling copy, shooting enticing photos, or even producing glamorous videos are all tactics we use to draw attention to our brands. While all of these strategies can be successful, there really is no better way to gain trust and prove the validity of your brand like customer testimonials.
+          </p>
+          <p>
+            <b>Ackerley</b>
+            Media Analyst at <span>ZenDesk</span>
+          </p>
+        </div>
+        <div class="item">
+          <img src="./images/face-02.jpg" alt="face-02">
+          <p>
+            ZenDesk’s testimonial page is beautifully laid out AND functional, with a silent customer video playing on loop to serve as the banner, a menu to filter testimonials by location, company size, industry, and use case, and lastly thumbnails linking to the full customer stories for a variety of big-name brands. This is a clean and concise way to showcase their happy customers.
+          </p>
+          <p>
+            <b>Dabria</b>
+            Graphic Designer at <span>ChowNow</span>
+          </p>
+        </div>
+        <div class="item">
+          <img src="./images/face-03.jpg" alt="face-03">
+          <p>
+            As we all know, it’s easy for marketers to brag about how great their product or service is. Writing compelling copy, shooting enticing photos, or even producing glamorous videos are all tactics we use to draw attention to our brands. While all of these strategies can be successful, there really is no better way to gain trust and prove the validity of your brand like customer testimonials.
+          </p>
+          <p>
+            <b>Vadim</b>
+            Developer at <span>Startup Institute</span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="btn">
+      <label for="tab1"></label>
+      <label for="tab2"></label>
+      <label for="tab3"></label>
+    </div>
+
+  </div>
+
+
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script>
+
+
+  </script>
+
+</body>
+</html>

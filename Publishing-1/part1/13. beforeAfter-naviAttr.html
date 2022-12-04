@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://kit.fontawesome.com/4a12b3abf8.js" crossorigin="anonymous"></script>
+  
+  <style>
+
+    body {
+      color: #222;
+      line-height: 1.5em;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background: linear-gradient(90deg, #dce35b, #45b649);
+    }
+    a {
+      text-decoration: none;
+      color: #222;
+    }
+
+    /* 케이스 1 */
+    /* .gnb {
+      background-color: #fff;
+      padding: 15px 15px 10px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, .15);
+    }
+    .gnb a {
+      display: inline-block;
+      width: 80px;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .gnb a span {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      transition: 0.3s;
+    }
+    .gnb a span:nth-child(1) {
+      top: 0;
+      left: 0;
+    }
+    .gnb a span:nth-child(2) {
+      top: 100%;
+      left: 0;
+      color: #45b649;
+    }
+
+    .gnb a:hover span:nth-child(1) {
+      top: -100%;
+    }
+    .gnb a:hover span:nth-child(2) {
+      top: 0;
+    } */
+
+    /* 케이스 2 */
+    .gnb {
+      background-color: #fff;
+      padding: 15px 15px 10px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, .15);
+    }
+    .gnb a {
+      display: inline-block;
+      width: 80px;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .gnb a:before,
+    .gnb a:after {
+      content: attr(date-link); /* attribute 속성 */
+      position: absolute;
+      width: 100%;
+      transition: 0.3s;
+    }
+
+    .gnb a:before {
+      top: 0;
+      left: 0;
+    }
+    .gnb a:after {
+      top: 100%;
+      left: 0;
+      color: #45b649;
+    }
+
+    .gnb a:hover:before {
+      top: -100%;
+    }
+    .gnb a:hover:after {
+      top: 0;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!--  케이스 1
+  <div class="gnb">
+    <a href="#none">
+      <span>메일</span>
+      <span>메일</span>
+    </a>
+    <a href="#none">
+      <span>카페</span>
+      <span>카페</span>
+    </a>
+    <a href="#none">
+      <span>블로그</span>
+      <span>블로그</span>
+    </a>
+    <a href="#none">
+      <span>지식IN</span>
+      <span>지식IN</span>
+    </a>
+    <a href="#none">
+      <span>쇼핑</span>
+      <span>쇼핑</span>
+    </a>
+    <a href="#none">
+      <span>Pay</span>
+      <span>Pay</span>
+    </a>
+    <a href="#none">
+      <span>사전</span>
+      <span>사전</span>
+    </a>
+    <a href="#none">
+      <span>뉴스</span>
+      <span>뉴스</span>
+    </a>
+  </div> -->
+
+  <!-- 케이스 2 -->
+  <div class="gnb">
+    <a href="#none" date-link="메일"></a>
+    <a href="#none" date-link="카페"></a>
+    <a href="#none" date-link="블로그"></a>
+    <a href="#none" date-link="지식IN"></a>
+    <a href="#none" date-link="쇼핑"></a>
+    <a href="#none" date-link="Pay"></a>
+    <a href="#none" date-link="사전"></a>
+    <a href="#none" date-link="뉴스"></a>
+  </div>
+
+
+
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script>
+
+
+  </script>
+
+</body>
+</html>

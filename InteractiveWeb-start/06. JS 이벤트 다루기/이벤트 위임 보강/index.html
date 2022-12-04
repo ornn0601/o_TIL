@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>이벤트 위임 보강</title>
+  <style>
+    
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .menu {
+      background: grey;
+      padding: 50px;
+      width: 800px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* 이벤트 처리 금지 */
+    /* .btn-label, .icon {
+      pointer-events: none;
+    } */
+
+  </style>
+</head>
+<body>
+
+  <div class="menu">
+    <button class="menu-btn a" data-value="1">
+      <img class="icon" src="images/ilbuni_1.png" alt="일분이 1">
+      <span class="btn-label">일분이 1</span>
+    </button>
+    <button class="menu-btn b" data-value="2">
+      <img class="icon" src="images/ilbuni_2.png" alt="일분이 2">
+      <span class="btn-label">일분이 2</span>
+    </button>
+    <button class="menu-btn c" data-value="3">
+      <img class="icon" src="images/ilbuni_3.png" alt="일분이 3">
+      <span class="btn-label">일분이 3</span>
+    </button>
+  </div>
+  
+  <script src="main.js"></script>
+</body>
+</html>

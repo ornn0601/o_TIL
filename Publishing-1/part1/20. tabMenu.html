@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://kit.fontawesome.com/4a12b3abf8.js" crossorigin="anonymous"></script>
+
+  <style>
+
+    body {
+      color: #222;
+      background-color: #fff;
+      line-height: 1.5em;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    a {
+      text-decoration: none;
+      color: #222;
+    }
+
+    .teb-inner {
+      /* border: 1px solid red; */
+      width: 300px;
+      height: 350px;
+      position: relative;
+    }
+    input[name=tabmenu] {
+      display: none;
+    }
+    .content {
+      display: none;
+    }
+    .btn {
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      text-align: center;
+    }
+    .btn label {
+      background-color: lightgray;
+      width: 15px;
+      height: 15px;
+      display: inline-block;
+      border-radius: 50%;
+      margin: 0 5px;
+      cursor: pointer;
+    }
+
+    input[id=tab1]:checked ~ .slide1,
+    input[id=tab2]:checked ~ .slide2,
+    input[id=tab3]:checked ~ .slide3 {
+      display: block;
+    }
+
+    input[id=tab1]:checked ~ .btn label[for=tab1],
+    input[id=tab2]:checked ~ .btn label[for=tab2],
+    input[id=tab3]:checked ~ .btn label[for=tab3] {
+      background-color: crimson;
+    }
+
+
+  </style>
+</head>
+<body>
+
+  <div class="teb-inner">
+    <input type="radio" name="tabmenu" id="tab1" checked>
+    <input type="radio" name="tabmenu" id="tab2">
+    <input type="radio" name="tabmenu" id="tab3">
+
+    <div class="content slide1">
+      <img src="./images/slide-01.jpg" alt="slide-01">
+    </div>
+    <div class="content slide2">
+      <img src="./images/slide-02.jpg" alt="slide-02">
+    </div>
+    <div class="content slide3">
+      <img src="./images/slide-03.jpg" alt="slide-03">
+    </div>
+
+    <div class="btn">
+      <label for="tab1"></label>
+      <label for="tab2"></label>
+      <label for="tab3"></label>
+    </div>
+
+  </div>
+
+
+
+
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script>
+
+
+  </script>
+
+</body>
+</html>

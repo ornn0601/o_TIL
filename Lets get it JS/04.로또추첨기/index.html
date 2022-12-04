@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>로또 추첨기</title>
+  <style>
+
+    .ball {
+      display: inline-block;
+      border: 1px solid black;
+      border-radius: 20px;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      font-size: 20px;
+      text-align: center;
+      margin-right: 20px;
+    }
+
+  </style>
+</head>
+<body>
+  
+  <div id="result">추첨 결과는? </div>
+  <div id="bonus">보너스 : </div>
+
+  <script>
+
+    // Array(45) : 빈배열 45개 제작
+    // fill() : 언디파인드로 45개 가득 채움
+    // map((v, i) => i + 1) : 인덱스에 1 더하기
+    // 1부터 45까지 뽑는 코드
+    const candidate = Array(45).fill().map((v, i) => i + 1);
+
+    // 45개 숫자 섞기 : 피셔-에이츠 셔플(Fisher-Yates Shuffle)
+    const shuffle = [];
+    while (candidate.length > 0) {
+      const random = Math.floor(Math.random() * candidate.length); // 무작위 인덱스 뽑기
+      const spliceArray = candidate.splice(random, 1); // 뽑은 값은 배열에 들어 있음
+      const value = spliceArray[0]; // 배열에 들어있는 값을 꺼내어
+      shuffle.push(value); // shuffle 배열에 넣기
+    }
+    console.log(shuffle);
+     
+    /* for문으로 변경
+    for (let i = candidate.length; i > 0; i--) {
+      const random = Math.floor(Math.random() * i);
+      const spliceArray = candidate.splice(random, 1);
+      const value = spliceArray[0];
+      shuffle.push(value);
+    }
+    - while : 조건이 간단할때 사용, 내가 몇번 반복할지 불확실할때
+    - for : 조건이 복잡해지면 사용, 몇번 실행할지 확실할때
+    */
+
+    /* 배열
+    slice() : (시작, 끝(포함x)) 잘라도 원본이 변하지 않는다. 추가 안됨
+    splice() : (시작, 갯수, 추가) 원본이 수정됨
+    sort(() => {}); : return 값에 따른 정렬 (a-b : 오름차순, b-a : 내림차순)
+    글자 정렬 : arr.slice().sort((a, b) => a[0].charCodeAt() - b[0].charCodeAt());
+    글자 사전순 : a.localeCompare(b). 한글 가능
+    */
+
+    // 선택된 6개의 숫자에 대해 작은수부터 정렬
+    // 당첨공
+    const winBalls = shuffle.slice(0, 6).sort((a, b) => a - b);
+    // 보너스 공
+    const bonus = shuffle[6];
+    console.log(winBalls, bonus);
+
+    const $result = document.querySelector('#result');
+    const $bonus = document.querySelector('#bonus');
+    
+    function colorize(number, $tag) {
+      if (number < 10) {
+        $tag.style.backgroundColor = 'red';
+        $tag.style.color = 'white';
+      } else if (number < 20) {
+        $tag.style.backgroundColor = 'orange';
+      } else if (number < 30) {
+        $tag.style.backgroundColor = 'yellow';
+      } else if (number < 40) {
+        $tag.style.backgroundColor = 'blue';
+        $tag.style.color = 'white';
+      } else {
+        $tag.style.backgroundColor = 'green';
+        $tag.style.color = 'white';
+      }
+    }
+
+
+    // 중복을 줄여라. 리팩토링
+    const showBall = (number, $target) => {
+      const $ball = document.createElement('div');
+      $ball.className = 'ball';
+      colorize(number, $ball);
+      $ball.textContent = number;
+      $target.appendChild($ball);
+    };
+
+    for (let i = 0; i < winBalls.length; i++) {
+      setTimeout(() => {
+        showBall(winBalls[i], $result);
+      }, (i + 1) * 1000);
+    }
+
+    setTimeout(() => {
+      showBall(bonus, $bonus);
+    }, 7000);
+
+
+
+
+
+  </script>
+</body>
+</html>

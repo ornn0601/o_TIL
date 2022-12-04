@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://kit.fontawesome.com/4a12b3abf8.js" crossorigin="anonymous"></script>
+
+  <style>
+
+    body {
+      color: #222;
+      background-color: #fff;
+      line-height: 1.5em;
+      height: 100vh;
+      background-color: #eee;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    a {
+      text-decoration: none;
+      color: #222;
+    }
+
+    .testimonial-section {
+      width: 800px;
+      text-align: center;
+      background-color: #fff;
+      padding: 20px;
+      box-sizing: border-box;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, .15);
+    }
+    .testimonial-section h1 {
+      font-size: 25px;
+      font-size: 400;
+      margin-bottom: 30px;
+    }
+    .testimonial-section h1 span {
+      color: crimson; 
+    }
+
+    .testimonial-section .testimonial-pic {}
+    .testimonial-section .testimonial-pic img {
+      width: 100px;
+      filter: grayscale(1); /* 1, 100% */
+      margin: 5px;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+    .testimonial-section .testimonial-pic img.active {
+      border-radius: 50%;
+      filter: grayscale(0);
+    }
+
+    .testimonial-section .testimonial {}
+    .testimonial-section .testimonial .content {
+      display: none;
+    }
+    .testimonial-section .testimonial .content.active {
+      display: block;
+    }
+    .testimonial-section .testimonial .content p:nth-child(2) {
+      font-weight: bold;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="testimonial-section">
+    <h1><span>CodingWorks</span> Publishing Online Class with Inflearn</h1>
+    <div class="testimonial-pic">
+      <img class="active" src="./img/face-01.jpg" alt="face-01" data-alt="tab1">
+      <img src="./img/face-02.jpg" alt="face-02" data-alt="tab2">
+      <img src="./img/face-03.jpg" alt="face-03" data-alt="tab3">
+      <img src="./img/face-04.jpg" alt="face-04" data-alt="tab4">
+    </div>
+    <div class="testimonial">
+      <div class="content active" id="tab1">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam corrupti soluta asperiores expedita, molestiae cupiditate aperiam mollitia perspiciatis! Sequi itaque tenetur illum sit quasi cum corrupti maxime voluptatem doloribus quaerat non aliquid, natus a earum repellat nobis eligendi harum illo voluptates? Dignissimos soluta fugiat quisquam veniam, consequuntur odit eveniet? Atque quisquam quod perspiciatis itaque mollitia, minus nisi, vel aperiam expedita beatae natus amet. Aliquid sint ipsum, nihil voluptatem, velit atque molestiae, veniam minima possimus voluptas architecto non accusantium optio beatae.</p>
+        <p>Sally, Web Desginer</p>
+      </div>
+      <div class="content" id="tab2">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam corrupti soluta asperiores expedita, molestiae cupiditate aperiam mollitia perspiciatis! Sequi itaque tenetur illum sit quasi cum corrupti maxime voluptatem doloribus quaerat non aliquid, natus a earum repellat nobis eligendi harum illo voluptates? Dignissimos soluta fugiat quisquam veniam, consequuntur odit eveniet? Atque quisquam quod perspiciatis itaque mollitia, minus nisi, vel aperiam expedita beatae natus amet. Aliquid sint ipsum, nihil voluptatem, velit atque molestiae, veniam minima possimus voluptas architecto non accusantium optio beatae.</p>
+        <p>Amy, Graphic Designer</p>
+      </div>
+      <div class="content" id="tab3">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam corrupti soluta asperiores expedita, molestiae cupiditate aperiam mollitia perspiciatis! Sequi itaque tenetur illum sit quasi cum corrupti maxime voluptatem doloribus quaerat non aliquid, natus a earum repellat nobis eligendi harum illo voluptates? Dignissimos soluta fugiat quisquam veniam, consequuntur odit eveniet? Atque quisquam quod perspiciatis itaque mollitia, minus nisi, vel aperiam expedita beatae natus amet. Aliquid sint ipsum, nihil voluptatem, velit atque molestiae, veniam minima possimus voluptas architecto non accusantium optio beatae.</p>
+        <p>Jung Ho, Developer</p>
+      </div>
+      <div class="content" id="tab4">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam corrupti soluta asperiores expedita, molestiae cupiditate aperiam mollitia perspiciatis! Sequi itaque tenetur illum sit quasi cum corrupti maxime voluptatem doloribus quaerat non aliquid, natus a earum repellat nobis eligendi harum illo voluptates? Dignissimos soluta fugiat quisquam veniam, consequuntur odit eveniet? Atque quisquam quod perspiciatis itaque mollitia, minus nisi, vel aperiam expedita beatae natus amet. Aliquid sint ipsum, nihil voluptatem, velit atque molestiae, veniam minima possimus voluptas architecto non accusantium optio beatae.</p>
+        <p>Chris, Printing Desinger</p>
+      </div>
+    </div>
+  </div>
+
+
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script>
+
+    $(document).ready(function() {
+      
+      $('.testimonial-pic img').click(function() {
+        $(this).addClass('active');
+        $(this).siblings().removeClass('active');
+
+        // content active 초기화
+        $('.testimonial .content').removeClass('active');
+        // #tab1 == $('#' + $(this).attr('data-alt'))
+        $('#' + $(this).attr('data-alt')).addClass('active');
+      });
+
+    });
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    @import url('https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/fontawesome.min.css');
+
+    body {
+      color: #222;
+      line-height: 1.5;
+      font-weight: 300;
+      margin: 0;
+      background-color: royalblue;
+    }
+    a {
+      text-decoration: none;
+      color: #222;
+    }
+
+    .gnb {
+      position: absolute;
+      top: 50%;
+      left: 100px;
+      transform: translateY(-50%);
+    }
+    .gnb a {
+      display: block;
+      font-size: 40px;
+      margin: 10px 0;
+      color: #fff;
+      transition: 0.5s;
+    }
+
+    /* 순서 중요 */
+    .gnb:hover a {
+      opacity: 0.3;
+    }
+    .gnb a:hover {
+      opacity: 1;
+    }
+    .gnb a:before {
+      content: '\f105';
+      font-family: fontawesome;
+      margin-right: 10px;
+      opacity: 0;
+      transition: 0.5s;
+    }
+    .gnb a:hover:before {
+      opacity: 1;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="gnb">
+    <a href="#none">New Arrivals</a>
+    <a href="#none">Summer Collection</a>
+    <a href="#none">Winter Collection</a>
+    <a href="#none">Special offers</a>
+    <a href="#none">Trends</a>
+  </div>
+
+
+
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+  <script>
+
+
+  </script>
+
+</body>
+</html>

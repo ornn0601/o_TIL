@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://kit.fontawesome.com/4a12b3abf8.js" crossorigin="anonymous"></script>
+
+  <style>
+
+    body {
+      color: #222;
+      background-color: #fff;
+      line-height: 1.5em;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    a {
+      text-decoration: none;
+      color: #222;
+    }
+
+    .container {}
+
+    /* trigger button */
+    input[id=trigger] {
+      display: none;
+    }
+
+    label[for=trigger] {
+      width: 100px;
+      height: 80px;
+      display: block;
+      position: relative;
+      cursor: pointer;
+    }
+    label[for=trigger] span {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background-color: #000;
+      transition: 0.3s;
+    }
+    label[for=trigger] span:nth-child(1) {
+      top: 0;
+    }
+    label[for=trigger] span:nth-child(2) {
+      top: 50%;
+    }
+    label[for=trigger] span:nth-child(3) {
+      top: 100%;
+    }
+
+    /* click */
+    input[id=trigger]:checked + label[for=trigger] span:nth-child(1) {
+      top: 50%;
+      transform: rotate(45deg);
+    }
+    input[id=trigger]:checked + label[for=trigger] span:nth-child(2) {
+      opacity: 0;
+    }
+    input[id=trigger]:checked + label[for=trigger] span:nth-child(3) {
+      top: 50%;
+      transform: rotate(-45deg);
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <input type="checkbox" id="trigger">
+    <label for="trigger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+  </div>
+  
+
+
+
+
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script>
+
+
+  </script>
+
+</body>
+</html>

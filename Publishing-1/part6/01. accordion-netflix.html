@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://kit.fontawesome.com/4a12b3abf8.js" crossorigin="anonymous"></script>
+
+  <style>
+
+    body {
+      color: #fff;
+      background-color: #000;
+      line-height: 1.5;
+      margin: 0;
+    }
+    a {
+      text-decoration: none;
+      color: #fff;
+    }
+    h1, h2, h3, h4, h5, h6, p {
+      font-weight: normal;
+      margin: 0;
+    }
+
+    .faq {
+      min-height: 100vh;
+      margin-top: 120px;
+    }
+    .faq-inner {
+      width: 700px;
+      margin: 0 auto;
+    }
+    .faq-inner h1 {
+      text-align: center;
+      font-size: 50px;
+      font-weight: 500;
+    }
+    
+    .accordion {
+      margin-top: 20px;
+    }
+    .accordion .title,
+    .accordion .content {
+      background-color: #303030;
+      padding: 10px 15px;
+      margin-bottom: 7px;
+    }
+    .accordion .title {
+      cursor: pointer;
+    }
+    .accordion .title.active {
+      background-color: #353b48;
+    }
+
+    .accordion .title p {
+      position: relative;
+      font-size: 21px;
+    }
+    .accordion .title p::after {
+      content: '\2b';
+      font-family: fontawesome;
+      float: right;
+      transition: 0.3s;
+    }
+    .accordion .title.active p::after {
+      transform: rotate(45deg);
+    }
+
+    .accordion .content {
+      display: none;
+      margin-bottom: 20px;
+    }
+    .accordion .content p {
+      margin: 10px 0;
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
+    .newsletter {
+      width: 90%;
+      margin: auto;
+      text-align: center;
+      margin-top: 30px;
+    }
+    .newsletter p {
+      font-size: 18px;
+    }
+    .newsletter .inputBox {
+      margin-top: 20px;
+      display: flex;
+    }
+
+    .newsletter .inputBox input[type=email],
+    .newsletter .inputBox button {
+      border: none;
+      outline: none;
+      height: 60px;
+      vertical-align: middle;
+      font-size: 20px;
+      box-sizing: border-box;
+    }
+
+    .newsletter .inputBox input[type=email] {
+      flex: 3;
+      padding: 10px 20px;
+    }
+    .newsletter .inputBox button {
+      background-color: #e84118;
+      color: #fff;
+      cursor: pointer;
+      flex: 1;
+    }
+    .newsletter .inputBox button:after {
+      content: '\f105';
+      font-size: 18px;
+      display: inline-block;
+      font-family: fontawesome;
+      vertical-align: middle;
+      transform: translateY(-2px);
+      margin-left: 5px;
+    }
+
+
+
+  </style>
+</head>
+<body>
+
+  <section class="faq">
+    <div class="faq-inner">
+      <h1>자주 묻는 질문</h1>
+      <div class="accordion">
+        <div class="title active">
+          <p>
+            Lorem ipsum dolor sit amet.
+          </p>
+        </div>
+        <div class="content">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil laborum qui Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil laborum qui
+          </p>
+          <p>
+            maiores molestiae eligendi omnis illum beatae assumenda tempore est.
+          </p>
+        </div>
+
+        <div class="title 1">
+          <p>
+            Lorem ipsum dolor sit amet.
+          </p>
+        </div>
+        <div class="content">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil laborum qui Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil laborum qui
+          </p>
+          <p>
+            maiores molestiae eligendi omnis illum beatae assumenda tempore est.
+          </p>
+        </div>
+
+        <div class="title 2">
+          <p>
+            Lorem ipsum dolor sit amet.
+          </p>
+        </div>
+        <div class="content">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil laborum qui Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil laborum qui
+          </p>
+          <p>
+            maiores molestiae eligendi omnis illum beatae assumenda tempore est.
+          </p>
+        </div>
+
+        <div class="title 3">
+          <p>
+            Lorem ipsum dolor sit amet.
+          </p>
+        </div>
+        <div class="content">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil laborum qui Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil laborum qui
+          </p>
+          <p>
+            maiores molestiae eligendi omnis illum beatae assumenda tempore est.
+          </p>
+        </div>
+
+        <div class="title 4">
+          <p>
+            Lorem ipsum dolor sit amet.
+          </p>
+        </div>
+        <div class="content">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil laborum qui Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil laborum qui
+          </p>
+          <p>
+            maiores molestiae eligendi omnis illum beatae assumenda tempore est.
+          </p>
+        </div>
+
+        <div class="title 5">
+          <p>
+            Lorem ipsum dolor sit amet.
+          </p>
+        </div>
+        <div class="content">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil laborum qui Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil laborum qui
+          </p>
+          <p>
+            maiores molestiae eligendi omnis illum beatae assumenda tempore est.
+          </p>
+        </div>
+
+        <div class="title 6">
+          <p>
+            Lorem ipsum dolor sit amet.
+          </p>
+        </div>
+        <div class="content">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil laborum qui Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil laborum qui
+          </p>
+          <p>
+            maiores molestiae eligendi omnis illum beatae assumenda tempore est.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="newsletter">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium dolorum recusandae odit aperiam enim error totam odio ut cumque labore.</p>
+        <div class="inputBox">
+          <input type="email" placeholder="이메일 주소">
+          <button>시작하기</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script>
+    $(function() {
+
+      $('.accordion .content').eq(0).show();
+
+      $('.accordion .title').click(function() {
+        $(this).addClass('active');
+        $(this).siblings('.accordion .title').removeClass('active');
+        $(this).siblings('.accordion .content').slideUp();
+        $(this).next().stop().slideToggle();
+      });
+
+    });
+
+  </script>
+
+</body>
+</html>

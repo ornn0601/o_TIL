@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loading-2</title>
+  <style>
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    a {
+      text-decoration: none;
+    }
+
+    .loading {
+      /* border: 1px solid red; */
+      width: 100px;
+      height: 100px;
+      position: relative;
+    }
+    .loading span {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      background-color: gray;
+      top: 0;
+      left: 0;
+      animation: loading 1.4s infinite;
+    }
+    .loading span:nth-child(1) {}
+    .loading span:nth-child(2) {
+      animation-delay: 0.7s;
+    }
+
+
+    @keyframes loading {
+      0% {
+        top: 0;
+        left: 0;
+      }
+      25% {
+        top: 0;
+        left: calc(100% - 30px);
+        background-color: dodgerblue;
+      }
+      50% {
+        top: calc(100% - 30px);
+        left: calc(100% - 30px);
+        background-color: orange;
+      }
+      75% {
+        top: calc(100% - 30px);
+        left: 0;
+        background-color: yellowgreen;
+      }
+      100% {
+        top: 0;
+        left: 0;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="loading">
+    <span></span>
+    <span></span>
+  </div>
+
+
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script>
+
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://kit.fontawesome.com/4a12b3abf8.js" crossorigin="anonymous"></script>
+
+  <style>
+
+    body {
+      color: #222;
+      background-color: #fff;
+      line-height: 1.5em;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    a {
+      text-decoration: none;
+      color: #222;
+    }
+
+    .gnb {
+      margin-bottom: 50px;
+    }
+    .gnb a {
+      font-size: 30px;
+      position: relative;
+      padding-bottom: 5px;
+    }
+    .gnb a:before {
+      content: '';
+      position: absolute;
+      background-color: crimson;
+      height: 1px;
+      bottom: 0;
+      transition: 0.3s;
+    }
+
+    /* 1번 */
+    .gnb1 a:before {
+      left: 0;
+      width: 0;
+    }
+    .gnb1 a:hover:before {
+      width: 100%;
+    }
+
+    /* 2번 */
+    .gnb2 a:before {
+      right: 0;
+      width: 0;
+    }
+    .gnb2 a:hover:before {
+      width: 100%;
+    }
+
+    /* 3번 */
+    .gnb3 a:before {
+      left: 0;
+      width: 10px;
+      height: 10px;
+    }
+    .gnb3 a:hover:before {
+      left: calc(100% - 10px);
+    }
+    
+    /* 4번 */
+    .gnb4 a:before {
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+    }
+    .gnb4 a:hover:before {
+      width: 100%;
+    }
+
+    /* 5번 */
+    .gnb5 a:before {
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+    }
+    .gnb5 a:hover:before {
+      width: 0;
+    }
+
+
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="gnb gnb1">
+      <a href="#none">1. CodingWorks Online Class</a>
+    </div>
+    <div class="gnb gnb2">
+      <a href="#none">2. CodingWorks Online Class</a>
+    </div>
+    <div class="gnb gnb3">
+      <a href="#none">3. CodingWorks Online Class</a>
+    </div>
+    <div class="gnb gnb4">
+      <a href="#none">4. CodingWorks Online Class</a>
+    </div>
+    <div class="gnb gnb5">
+      <a href="#none">5. CodingWorks Online Class</a>
+    </div>
+  </div>
+
+
+
+
+
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script>
+
+
+  </script>
+
+</body>
+</html>

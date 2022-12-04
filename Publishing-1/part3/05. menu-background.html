@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://kit.fontawesome.com/4a12b3abf8.js" crossorigin="anonymous"></script>
+
+  <style>
+
+    body {
+      color: #222;
+      background-color: #000;
+      line-height: 1.5;
+      height: 100vh;
+    }
+    a {
+      text-decoration: none;
+      color: #222;
+    }
+
+    .container {}
+    .navi {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      z-index: 100;
+    }
+
+    .navi li {}
+    .navi li a {
+      font-size: 40px;
+      font-weight: bold;
+      text-decoration: none;
+      color: #fff;
+      position: relative;
+    }
+    .navi li a:before {
+      content: attr(data-text);
+      position: absolute;
+      top: -6px;
+      left: 0;
+      width: 0;
+      color: yellowgreen;
+      overflow: hidden;
+      transition: 0.5s;
+    }
+    .navi li a:hover:before {
+      width: 100%;
+    }
+
+    .photo {
+      background-color: #ccc;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-image: url('./img/portrait-initial.jpg');
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      transition: 0.5s;
+    }
+
+
+
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <ul class="navi">
+      <li data-image="./img/portrait-01.jpg"><a href="#none" data-text="ABOUT">ABOUT</a></li>
+      <li data-image="./img/portrait-02.jpg"><a href="#none" data-text="INSTRUCTOR">INSTRUCTOR</a></li>
+      <li data-image="./img/portrait-03.jpg"><a href="#none" data-text="CLASS">CLASS</a></li>
+      <li data-image="./img/portrait-04.jpg"><a href="#none" data-text="LOCATION">LOCATION</a></li>
+    </ul>
+    <div class="photo"></div>
+  </div>
+
+
+
+
+
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script>
+
+    $('.navi li').mouseenter(function() {
+      let changeImage = $(this).attr('data-image');
+      $('.photo').css({
+        'background-image': 'url(' + changeImage + ')'
+      });
+    });
+    $('.navi li').mouseleave(function() {
+      $('.photo').css({
+        'background-image': ''
+      });
+    });
+
+  </script>
+
+</body>
+</html>

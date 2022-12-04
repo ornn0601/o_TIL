@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://kit.fontawesome.com/4a12b3abf8.js" crossorigin="anonymous"></script>
+
+  <style>
+
+    body {
+      color: #222;
+      background-color: #fff;
+      line-height: 1.5;
+      height: 100vh;
+      margin: 0;
+      background-color: #ffeb60;
+    }
+    a {
+      text-decoration: none;
+      color: #222;
+    }
+    h1, h2, h3, h4, h5, h6, p {
+      font-weight: normal;
+      margin: 0;
+    }
+
+    .faq {
+      margin-top: 100px;
+    }
+    .faq-inner {
+      width: 750px;
+      margin: auto;
+    }
+    .faq-inner h1 {
+      text-align: center;
+      font-size: 50px;
+      font-weight: 700;
+    }
+
+    .accordion {}
+    .accordion-item {
+      background-color: #fff;
+      padding: 15px 25px;
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(0, 0, 0, .2);
+      margin-bottom: 16px;
+    }
+    .accordion-item .title {
+     cursor: pointer;
+    }
+    .accordion-item .title p {
+      font-size: 20px;
+      font-weight: 700;
+    }
+    .accordion-item .title p:after {
+      content: '\f107';
+      font-family: fontawesome;
+      float: right;
+      transition: 0.3s;
+    }
+    .accordion-item .title.active p:after {
+      transform: rotate(180deg);
+    }
+
+    .accordion-item .content {
+      border-top: 1px solid #000;
+      padding-top: 15px;
+      margin-top: 15px;
+      display: none;
+      cursor: pointer;
+    }
+    .accordion-item .content p {
+      font-size: 16px;
+      font-weight: 400;
+    }
+    .accordion-item .content p + p {
+      margin-top: 15px;
+    }
+
+
+  </style>
+</head>
+<body>
+
+  <section class="faq">
+    <div class="faq-inner">
+      <h1>자주 묻는 질문</h1>
+      <div class="accordion">
+        <div class="accordion-item">
+          <div class="title active">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            </p>
+          </div>
+          <div class="content">
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed neque mollitia temporibus deserunt, molestiae cupiditate quam repudiandae sunt reiciendis omnis?
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, veniam.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <div class="title">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            </p>
+          </div>
+          <div class="content">
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed neque mollitia temporibus deserunt, molestiae cupiditate quam repudiandae sunt reiciendis omnis?
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, veniam.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <div class="title">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            </p>
+          </div>
+          <div class="content">
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed neque mollitia temporibus deserunt, molestiae cupiditate quam repudiandae sunt reiciendis omnis?
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, veniam.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <div class="title">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            </p>
+          </div>
+          <div class="content">
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed neque mollitia temporibus deserunt, molestiae cupiditate quam repudiandae sunt reiciendis omnis?
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, veniam.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <div class="title">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            </p>
+          </div>
+          <div class="content">
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed neque mollitia temporibus deserunt, molestiae cupiditate quam repudiandae sunt reiciendis omnis?
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, veniam.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script>
+    $(function() {
+
+      $('.accordion-item .content').eq(0).show();
+
+      $('.accordion-item .title').click(function() {
+        $(this).next().stop().slideToggle(300);
+        $(this).toggleClass('active');
+      });
+
+      $('.accordion-item .content').click(function() {
+        $(this).stop().slideUp();
+      });
+    });
+
+
+  </script>
+
+</body>
+</html>

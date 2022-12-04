@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    @import url('https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/fontawesome.min.css');
+
+    body {
+      color: #222;
+      line-height: 1.5em;
+      background-color: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    a {
+      text-decoration: none;
+      color: #222;
+    }
+
+    .gnb {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      width: 600px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      padding: 50px 30px;
+      display: flex;
+    }
+    .gnb li {
+      flex: 1;
+      text-align: center;
+      box-sizing: border-box;
+    }
+    .gnb li a {
+      font-size: 14px;
+      position: relative;
+    }
+
+    .gnb li a:before {
+      content: '';
+      position: absolute;
+      background-color: dodgerblue;
+      width: 0;
+      height: 2px;
+      bottom: -10px;
+      transition: 0.25s;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .gnb li a:hover:before {
+      width: 100%;
+    }
+
+
+
+  </style>
+</head>
+<body>
+
+
+  <ul class="gnb">
+    <li><a href="#none">HOME</a></li>
+    <li><a href="#none">ABOUT</a></li>
+    <li><a href="#none">SERVICE</a></li>
+    <li><a href="#none">PORTFOLIO</a></li>
+    <li><a href="#none">CONTACT</a></li>
+  </ul>
+
+
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script>
+
+
+  </script>
+
+</body>
+</html>

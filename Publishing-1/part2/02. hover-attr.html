@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://kit.fontawesome.com/4a12b3abf8.js" crossorigin="anonymous"></script>
+
+  <style>
+
+    body {
+      color: #222;
+      background-color: #fff;
+      line-height: 1.5em;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    a {
+      text-decoration: none;
+      color: #222;
+    }
+
+    .gnb {}
+    .gnb a {
+      position: relative;
+      font-size: 30px;
+      width: 400px;
+      height: 60px;
+      display: block;
+      overflow: hidden;
+      color: #fff;
+      text-transform: uppercase;
+    }
+    .gnb a:before,
+    .gnb a:after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: inherit;
+      height: inherit;
+      text-align: center;
+      line-height: 60px;
+      transition: 0.2s;
+    }
+
+    .gnb a:before {
+      background-color: crimson;
+    }
+    .gnb a:after {
+      background-color: royalblue;
+      top: 60px;
+    }
+
+    .gnb a:hover:before {
+      top: -100%;
+    }
+    .gnb a:hover:after {
+      top: 0;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="gnb">
+    <a href="#none" data-text="Codeworks online class"></a>
+  </div>
+
+
+
+
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script>
+
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parallax</title>
+  <style>
+    body {
+      height: 1000vh;
+      background: linear-gradient(150deg, red, orange, yellow, green, indigo, purple, black);
+    }
+    h1 {
+      color: #fff;
+    }
+
+    .progress {
+      position: fixed;
+      width: 100%;
+      height: 10px;
+      top: 0;
+      left: 0;
+      background-color: black;
+      z-index: 10;
+    }
+    .bar {
+      width: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 10px;
+      background-color: yellow;
+      z-index: 11;
+    }
+  </style>
+</head>
+<body>
+  
+  <h1>스크롤</h1>
+  <div class="progress">
+    <span class="bar"></span>
+  </div>
+
+  <script>
+    let scrollTop = 0;
+    let bar;
+
+    window.onload = function() {
+      bar = document.querySelector('.bar');
+    }
+
+    window.addEventListener('scroll', function() {
+      scrollTop = document.documentElement.scrollTop;
+      // console.log(scrollTop);
+
+      let per = Math.ceil(scrollTop / (document.body.scrollHeight - window.outerHeight) * 100);
+      // console.log(per);
+
+      bar.style.width = per + '%';
+
+    }, false);
+
+  </script>
+</body>
+</html>

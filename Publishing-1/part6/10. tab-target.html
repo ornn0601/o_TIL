@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://kit.fontawesome.com/4a12b3abf8.js" crossorigin="anonymous"></script>
+
+  <style>
+
+    body {
+      color: #222;
+      background-color: #eee;
+      line-height: 1.5;
+      margin: 0;
+    }
+    a {
+      text-decoration: none;
+      color: #222;
+    }
+    h1, h2, h3, h4, h5, h6, p {
+      font-weight: normal;
+      margin: 0;
+    }
+
+
+    .tab-inner {
+      width: 700px;
+      margin: 50px auto;
+    }
+    .tab-btn {}
+    .tab-btn a {
+      background-color: #000;
+      color: #fff;
+      display: inline-block;
+      width: 150px;
+      text-align: center;
+      padding: 10px;
+      margin-right: -3px;
+      font-weight: 500;
+      text-transform: uppercase;
+      border-top: 3px solid transparent;
+      transition: 0.3s;
+    }
+    .tab-btn a i {
+      margin-right: 5px;
+    }
+    .tab-btn a.active,
+    .tab-btn a:hover {
+      background-color: #fff;
+      color: royalblue;
+      border-top: 3px solid royalblue;
+    }
+
+    .tab-content {
+      position: relative;
+    }
+
+    .tab {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      visibility: hidden;
+      padding: 50px;
+      transition: 0.3s;
+      background-color: #fff;
+    }
+    .tab h2 {
+      text-transform: uppercase;
+    }
+    .tab p {}
+    .tab img {}
+
+    /* 기능 */
+    .tab:target {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .tab:nth-child(1) {
+      opacity: 1;
+      visibility: visible;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="tab-inner">
+    <div class="tab-btn">
+      <a href="#tab1"><i class="fa-solid fa-face-smile"></i>london</a>
+      <a href="#tab2"><i class="fa-solid fa-smog"></i>paris</a>
+      <a href="#tab3"><i class="fa-solid fa-house-chimney"></i>new york</a>
+      <a href="#tab4"><i class="fa-solid fa-comment"></i>dubai</a>
+    </div>
+    <div class="tab-content">
+      <div id="tab1" class="tab">
+        <h2>london</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam dolorum nesciunt dolore aperiam sapiente magni, amet quis temporibus est consectetur non officiis eaque id iste? Dolor quos corporis rem dicta.
+        </p>
+        <img src="./img/city-01.jpg" alt="">
+      </div>
+      <div id="tab2" class="tab">
+        <h2>paris</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam dolorum nesciunt dolore aperiam sapiente magni, amet quis temporibus est consectetur non officiis eaque id iste? Dolor quos corporis rem dicta.
+        </p>
+        <img src="./img/city-02.jpg" alt="">
+      </div>
+      <div id="tab3" class="tab">
+        <h2>new york</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam dolorum nesciunt dolore aperiam sapiente magni, amet quis temporibus est consectetur non officiis eaque id iste? Dolor quos corporis rem dicta.
+        </p>
+        <img src="./img/city-03.jpg" alt="">
+      </div>
+      <div id="tab4" class="tab">
+        <h2>dubai</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam dolorum nesciunt dolore aperiam sapiente magni, amet quis temporibus est consectetur non officiis eaque id iste? Dolor quos corporis rem dicta.
+        </p>
+        <img src="./img/city-04.jpg" alt="">
+      </div>
+    </div>
+  </div>
+
+
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script>
+
+$('.tab-btn a').eq(0).addClass('active');
+
+    $('.tab-btn a').click(function() {
+      $(this).addClass('active');
+      $(this).siblings('.tab-btn a').removeClass('active');
+    })
+
+  </script>
+
+</body>
+</html>

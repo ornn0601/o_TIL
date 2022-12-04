@@ -1,0 +1,267 @@
+/* font-family: 'Montserrat', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap');
+
+/* font-family: 'Monoton', cursive; */
+@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+
+/* font-family: 'Raleway', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+
+body {
+  color: #fff;
+  background-color: #fff;
+  line-height: 1.5;
+  height: 100vh;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+a {
+  text-decoration: none;
+  color: #222;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+  margin: 0;
+}
+
+/* BG video */
+.container {}
+
+.video-frame {}
+.video-frame:before {
+  content: '';
+  background: linear-gradient(135deg, crimson, transparent);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.video-frame video {
+  position: fixed;
+  min-height: 100%;
+  min-width: 100%;
+  z-index: -1;
+}
+
+/* Logo */
+.log {
+  line-height: 0;
+  position: absolute;
+  top: 50px;
+  left: 100px;
+  width: 90px;
+}
+.log img {
+  width: 100%;
+}
+
+/* heading */
+.heading {
+  position: absolute;
+  width: 700px;
+  left: 100px;
+  bottom: 100px;
+  animation: showing1 1s 1s linear;
+  animation-fill-mode: both; /* 100% 고정 */
+}
+.heading h1 {
+  font-size: 60px;
+  margin: 0;
+  font-weight: bold;
+  line-height: 1.2;
+}
+.heading h1 span {
+  display: block;
+  color: crimson;
+}
+
+.heading p {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.btn-book, .btn-learn {
+  text-transform: uppercase;
+  width: 150px;
+  display: inline-block;
+  text-align: center;
+  padding: 7px;
+  border-radius: 20px;
+  border: 1px solid #fff;
+  transition: 0.3s;
+}
+.btn-book {
+  background-color: #fff;
+  color: #222;
+  margin-right: 5px;
+}
+.btn-learn {  
+  background-color: transparent;
+  color: #fff;
+}
+
+.btn-book:hover {
+  background-color: #000;
+  color: #fff;
+  border-color: #000;
+}
+.btn-learn:hover {
+  background-color: #fff;
+  color: #222;
+}
+
+/* anniversary */
+.anniversary {
+  position: absolute;
+  right: 100px;
+  bottom: 50px;
+  color: #000;
+  text-align: center;
+  animation: showing2 1s 1s linear;
+  animation-fill-mode: both; /* 100% 고정 */
+}
+.anniversary em {
+  font-style: normal;
+  display: block;
+  font-size: 30px;
+  letter-spacing: 3px;
+  margin-bottom: -20px;
+}
+.anniversary span {
+  font-family: 'Monoton', cursive;
+  font-size: 150px;
+}
+
+/* trigger */
+.trigger {
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  width: 40px;
+  height: 20px;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.trigger span {
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: #000;
+  transition: 0.3s;
+}
+
+.trigger span:nth-child(1) {
+  top: 0;
+}
+.trigger span:nth-child(2) {
+  top: 50%;
+  width: 80%;
+}
+.trigger span:nth-child(3) {
+  top: 100%;
+}
+
+.trigger.active span {
+  background-color: #fff;
+}
+.trigger.active span:nth-child(1) {
+  top: 50%;
+  transform: rotate(45deg);
+}
+.trigger.active span:nth-child(2) {
+  opacity: 0;
+}
+.trigger.active span:nth-child(3) {
+  top: 50%;
+  transform: rotate(-45deg);
+}
+
+/* modal-gnb */
+.modal-gnb {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, .9);
+}
+.gnb {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.gnb a {
+  font-family: 'Raleway', sans-serif;
+  color: #fff;
+  font-size: 60px;
+  display: block;
+  padding: 10px;
+  margin: 0;
+  line-height: 1.2;
+  transition: 0.3s;
+  animation: gnb 0.5s linear;
+  animation-fill-mode: both;
+  opacity: 0;
+}
+.gnb a:nth-child(1) {
+  animation-delay: 0.5s;
+}
+.gnb a:nth-child(2) {
+  animation-delay: 0.7s;
+}
+.gnb a:nth-child(3) {
+  animation-delay: 0.9s;
+}
+.gnb a:nth-child(4) {
+  animation-delay: 1.1s;
+}
+.gnb a:nth-child(5) {
+  animation-delay: 1.3s;
+}
+
+.gnb a:hover {
+  color: crimson;
+}
+
+
+
+/* animation */
+
+@keyframes showing1 {
+  0% {
+    opacity: 0;
+    margin-left: -100px;
+  }
+  100% {
+    opacity: 1;
+    margin-left: 0;
+  }
+}
+
+@keyframes showing2 {
+  0% {
+    opacity: 0;
+    margin-right: -100px;
+  }
+  100% {
+    opacity: 1;
+    margin-right: 0;
+  }
+}
+
+@keyframes gnb {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
