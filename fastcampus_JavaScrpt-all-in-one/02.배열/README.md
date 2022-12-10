@@ -300,13 +300,36 @@ const counts = alphabets.reduce((acc, current) => {
 }, {});
 console.log(counts); // Object {a: 3, b: 1, c: 2, d: 1, e: 1};
 ```
-
-Q1. 숫자 배열이 주어졌을 때 10보다 큰 숫자의 갯수를 반환하는 함수를 만드세요
+  
+---
+### Q1. 숫자 배열이 주어졌을 때 10보다 큰 숫자의 갯수를 반환하는 함수를 만드세요
 ```js
 function countBiggerThanTen(numbers) {
-  
+  let count = 0;
+  numbers.forEach(function(n) {
+    if (n > 10) {
+      count++;
+    }
+  });
+  return count;
 }
 
 const count = countBiggerThanTen([1, 2, 3, 4, 5, 10, 20, 30, 40, 50, 60]);
 console.log(count); // 5
+```  
+```js
+function countBiggerThanTen(numbers) {
+  return numbers.filter(n => n > 10).length;
+}
+```  
+```js
+function countBiggerThanTen(numbers) {
+  return numbers.reduce((acc, current) => {
+    if (current > 10) {
+      return acc + 1;
+    } else {
+      return acc;
+    }
+  }, 0);
+}
 ```
