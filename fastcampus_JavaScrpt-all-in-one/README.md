@@ -375,4 +375,124 @@ const todos = [
 const index = todos.findIndex(todo => todo.id === 3); // 2
 const todo = todos.find(todo => todo.done === false); // 3
 ```
+  
+## filter  
+- 특정 조건을 만족하는 원소들을 찾아서 새로운 배열을 만드는 함수
 
+```js
+const todos = [
+  {
+    id: 1,
+    text: '자바스크립트 입문',
+    done: true,
+  },
+  {
+    id: 2,
+    text: '함수 배우기',
+    done: true,
+  },
+  {
+    id: 3,
+    text: '객체와 배열 배우기',
+    done: true,
+  },
+  {
+    id: 4,
+    text: '배열 내장함수 배우기',
+    done: false,
+  }
+];
+const tasksNotDone = todos.fillter(todo => todo.done === false);
+const tasksNotDone = todos.fillter(todo => !todo.done);
+console.log(tasksNotDone);
+```
+  
+## splice, slice
+- splice(스플라이스) : 기존의 배열에서 수정함
+- slice(슬라이스) : 기존의 배열을 유지하고 새로운 배열을 만듬
+
+```js
+const numbers = [10, 20, 30, 40];
+
+const index = numbers.indexOf(30);
+const splice = numbers.splice(index, 2); // (시작, 몇번째)
+console.log(splice) // [30, 40]
+console.log(numbers) // [10, 20]
+
+const sliced = numbers.slice(0, 2); // (시작, 종료
+console.log(splice) // [10, 20]
+console.log(numbers) // [10, 20, 30, 40]
+```
+  
+## shift, pop, unshift, push  
+- shift : 첫번째 원소를 배열에서 추출, 기존 배열 수정  
+- unshift : 첫번째 원소로 추가, 기존 배열 수정
+- pop : 마지막 원소를 배열에서 추출, 기존 배열 수정  
+- push : 마지막 원소로 추가, 기존 배열 수정  
+
+```js
+const numbers = [10, 20, 30, 40];
+
+const value = numbers.shift();
+const value = numbers.pop();
+const value = numbers.unshift(5);
+const value = numbers.push(45);
+```
+
+## concat, join  
+- concat : 두 배열을 합침, 기존의 배열은 변하지 않음
+- join : 배열을 문자열로 합침  
+
+```js
+const arr1 = [1, 2, 3];
+const arr2 = [4, 5, 6];
+
+const concated = arr1.concat(arr2);
+const concated = [...arr1, ...arr2]; // es6
+
+console.log(concated) // [1, 2, 3, 4, 5, 6]
+console.log(arr1.join()); // 1,2,3
+console.log(arr1.join(' ')); // 1 2 3
+console.log(arr1.join(', ')); // 1, 2, 3
+```
+
+## reduce  
+- 배열이 주어졌을때 모든 값을 사용하여 연산할때 사용
+-  
+
+```js
+const number = [1, 2, 3, 4, 5];
+
+let sum = 0;
+numbers.forEach(n => {
+  sum + n;
+});
+console.log(sum);
+
+// reduce
+const sum = numbers.reduce((accumulator, current) => accumulator + current, 0);
+console.log(sum);
+
+// 평균
+const avg = numbers.reduce((accumulator, current, index, array) => {
+  if (index === array.length - 1) {
+    return (accumulator + current) / array.length;
+  }
+  return accumulator + current;
+}, 0);
+consloe.log(avg);
+```
+- 예시2 
+```js
+const alphabets = ['a', 'a', 'a', 'b', 'c', 'c', 'd', 'e'];
+
+const counts = alphabets.reduce((acc, current) => {
+  if (acc[current]) {
+    acc[current] += 1;
+  } else {
+    acc[current] = 1;
+  }
+  return acc;
+}, {});
+console.log(counts); // Object {a: 3, b: 1, c: 2, d: 1, e: 1};
+```
