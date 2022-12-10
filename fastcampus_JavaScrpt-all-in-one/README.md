@@ -195,3 +195,184 @@ number.b = 9;
 console.log(number.sum); // 16
 console.log(number.sum); // 값이 변하면 작동하기때문에 기존 값을 재사용하게 된다.
 ```
+  
+## 배열
+- 순서 : 0부터 시작  
+- 새로운 항목 추가 : push()  
+- 배열의 갯수 : length  
+```js
+const objects = [
+  {name: '멍멍이'},
+  {name: '야옹이'},
+];
+console.log(objects[0]);
+
+objects.push({
+  name: '멍뭉이'
+});
+
+console.log(objects.length);
+```
+  
+## 반복문 : for  
+- 시작 - 조건 - true - 구문실행 - false - 구문취소  
+
+```js
+for (let i = 0; i < 10; i++) {}
+for (let i = 10; i > 0; i--) {}
+```
+  
+- 배열과 함께 사용하기  
+```js
+const names = ['멍멍이', '야옹이', '멍뭉이'];
+for (let i = 0; i < names.length; i++) {
+  console.log(names[i]);
+}
+```
+  
+## 반복문 : while  
+- 조건이 false 조건이 필요하다. 없으면 무한루프  
+- 조건이 까다로운 경우 사용, 특정 조건을 비교할때 사용
+
+```js
+let i = 0;
+let isFun = false;
+
+while (!isFun) {
+  console.log(i);
+  i++;
+  if (i === 30) {
+    isFun = true;
+  }
+}
+```
+  
+## 반복문 : for..of, for...in  
+- for..of : 배열 안에 있는 것들을 사용해서 어떠한 작업을 할때 사용  
+- for..in : 배열 안에 있는 요소를 key, value로 탐색한다. 
+
+```js
+const numbers = [10, 20, 30, 40];
+
+for (let number of numbers) {}
+for (let i = 0; i < numbers.length; i++) {}
+```
+  
+- 객체의 정보를 받아오는 방법  
+```js
+const doggy = {
+  name: '멍멍이',
+  sound: '멍멍',
+  age: 2
+};
+console.log(Object.keys(doggy)); // ['멍멍이', '멍멍', 2]
+console.log(Object.values(doggy)); // ['name', 'sound', 'age']
+console.log(Object.entries(doggy)); // ['Array[2]', ''Array[2]', ''Array[2]']
+
+for (let key in doggy) {
+  console.log(`${key}: ${doggy[key]}`);
+} // name: 멍멍이, sound: 멍멍, age: 2
+```
+  
+## 반복문 : continue와 break  
+- continue : 특정 조건이 만족되었을때 다음으로 넘어간다.  
+- break : 반복문을 끝낸다.  
+
+```js
+for (let i = 0; i < 10; i++) {
+  if (i === 2) continue;
+  if (i === 5) break;
+}
+```
+  
+## 반복문 : forEach  
+```js
+const superheroes = ['아이언맨', '캡틴 아메리카', '토르']
+function print(hero) {
+  console.log(hero);
+}
+superheroes.forEach(print);
+
+superheroes.forEach(function(hero) {
+  console.log(hero);
+});
+
+superheroes.forEach(hero => {
+  console.log(hero);
+});
+```
+  
+## 반복문 : map  
+- map : 배열 안에 원소를 변환하고 싶을때 사용하는 내장 함수
+- indexOf :
+  - 배열에 아이템이 몇번째 있는지 알 수 있는 내장 함수
+  - 특정 값과 일치하는 것을 찾음
+- findIndex : 
+  - 특정 조건을 확인하여 그 조건이 일치한다면 그 원소의 순번을 알려주는 내장함수  
+- find : 찾은 값 자체를 반환
+
+```js
+const array = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+// 배열의 제곱
+// for
+const squared = [];
+for (let i = 0; i < array.length; i++) {
+  squared.push(array[i] * array[i]);
+}
+
+// forEach
+array.forEach(n => {
+  squared.push(n * n);
+});
+
+console.log(squared);
+
+// map
+const square = n => n * n;
+const squared = array.map(square);
+const squared = array.map(n => n * n;);
+
+const items = [
+  {
+    id: 1,
+    text: 'hello'
+  },
+  {
+    id : 2,
+    text: 'bye'
+  }
+];
+const texts = items.map(item => item.text);
+
+// indexOf
+const superheroes = ['아이언맨', '캡틴 아메리카', '토르'];
+const index = superheroes.indexOf('토르'); // 2
+
+// findIndex
+const todos = [
+  {
+    id: 1,
+    text: '자바스크립트 입문',
+    done: true,
+  },
+  {
+    id: 2,
+    text: '함수 배우기',
+    done: true,
+  },
+  {
+    id: 3,
+    text: '객체와 배열 배우기',
+    done: true,
+  },
+  {
+    id: 4,
+    text: '배열 내장함수 배우기',
+    done: false,
+  }
+];
+const index = todos.findIndex(todo => todo.id === 3); // 2
+const todo = todos.find(todo => todo.done === false); // 3
+```
+
