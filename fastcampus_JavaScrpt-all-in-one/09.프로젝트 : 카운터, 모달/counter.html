@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Count</title>
+  <style>
+
+
+  </style>
+</head>
+<body>
+  <h2 id="number">0</h2>
+  <div>
+    <button id="increase">+1</button> 
+    <button id="decrease">-1</button> 
+  </div>
+
+  <script>
+    const number = document.getElementById('number');
+    // const increase = document.getElementById('increase');
+    // const decrease = document.getElementById('decrease');
+
+    const buttons = document.querySelectorAll('button');
+    const [increase, decrease] = buttons;
+
+    increase.onclick = () => {
+      const current = parseInt(number.innerText, 10); // 문자열을 숫자로 변환
+      number.innerText = current + 1;
+    };
+
+    decrease.onclick = () => {
+      const current = parseInt(number.innerText, 10); // 문자열을 숫자로 변환
+      number.innerText = current - 1;
+    };
+
+  </script>
+</body>
+</html>
