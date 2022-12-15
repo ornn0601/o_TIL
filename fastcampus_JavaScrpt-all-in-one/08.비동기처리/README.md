@@ -257,6 +257,12 @@ process() // [멍멍이, 토끼, 거북이]
 
 // - Promise.race : 가장 빨리 끝나는 요소가 결과물이 된다.
 // - 가장 빨리 끝난 것이 error라고 할때만 error를 발생한다.
-
+async function process() {
+  try {
+    const rabbit = await Promise.race([gotDog(), getRabbit(), getTurtle()]);
+  } catch(e) {
+    console.log(e); // 토끼
+  }
+}
 ```
 
