@@ -156,5 +156,4 @@ console.log(a) // ['red', 'black', 'white']
 
 const b = ['red', 'black', 'white']; // 리터럴 표현법
 console.log(b) // ['red', 'black', 'white']
-
 ```
