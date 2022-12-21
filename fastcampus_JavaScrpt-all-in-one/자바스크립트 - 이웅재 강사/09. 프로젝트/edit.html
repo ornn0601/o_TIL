@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>수정하기</title>
+
+  <!-- Bootstrap CSS -->
+  <link
+    rel="stylesheet" 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" 
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" 
+    crossorigin="anonymous"
+  />
+  <link rel="stylesheet" type="text/css" href="css/edit.css" />
+</head>
+<body class="bg-light">
+  <div class="container">
+    <div class="py-5 text-center">
+      <h2>Book Save Form</h2>
+      <p class="lead">
+        Below is an example of a form that stores book information. Each
+        required group of forms has a validation status that can be triggered
+        by an attempt to submit a form without completing it.
+      </p>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 order-md-1">
+        <h4 class="mb-3">Book Edit</h4>
+        <form id="form-edit-book" class="needs-validation" novalidate>
+          <div class="mb-3">
+            <label for="title"
+              >Title <span class="text-muted">책 제목</span></label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="title"
+              placeholder="책 제목을 입력하세요"
+              required
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="comment"
+              >Comment <span class="text-muted">한 줄 코멘트</span></label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="message"
+              placeholder="한 줄 감상평을 입력하세요"
+              required
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="author"
+              >Author <span class="text-muted">글쓴이</span></label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="author"
+              placeholder="글쓴이를 입력하세요"
+              required
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="link"
+              >Link <span class="text-muted">링크</span></label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="url"
+              placeholder="URL 을 입력하세요"
+              required
+            />
+          </div>
+
+          <hr class="mb-4" />
+
+          <button class="btn btn-primary btn-lg btn-block" type="submit">
+            Save
+          </button>
+
+          <button class="btn btn-secondary btn-lg btn-block" id="btn-cancel">
+            Cancel
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <footer class="my-5 pt-5 text-muted text-center text-small">
+      <p class="mb-1">&copy; 2019 Marktube</p>
+    </footer>
+  </div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script 
+    src="https://code.jquery.com/jquery-3.6.2.min.js"
+    integrity="sha256-2krYZKh//PcchRtd+H+VyyQoZ/e3EcrkxhM8ycwASPA="
+    crossorigin="anonymous"
+  ></script>
+  <script 
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"
+  ></script>
+
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="js/edit.js"></script>
+</body>
+</html>
