@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,27 +13,41 @@
 <body>
   
   <div id="root"></div>
-  <div id="root1"></div>
 
   <script type="text/babel">
 
     const rootElement = document.getElementById("root");
-    const rootElement1 = document.getElementById("root1");
 
-    // jsx
-    const text = "Hello, world 변수에 담기"; // 변수로 넣기
-    const titleClassName = "title123";
+    const Text = ({ text }) => {
+        // text가 대문자로 시작하면 h1, 소문자로 시작하면 h3
+        if(text.charAt(0) === text.charAt(0).toUpperCase()) {
+          return <h1>{text}</h1>;
+        } else {
+          return <h3>{text}</h3>;
+        }
+    };
 
-    // const element = <h1 className="title">Hello, world</h1>;
-    const element1 = <h1 className={titleClassName}>{text}</h1>;
+    const element = (
+      <>
+        <Text text="abc" /> 
+        <Text text="ABC" />
+      </>
+    ); // <h3>abc</h3 <h1>ABC</h1>
 
-    const props = {className: titleClassName, children: text };
-    const customH1 = <h1 {...props} />;
-    // const customH1 = {props.className} children={props.children} />;
-    const element = customH1;
-    
     ReactDOM.render(element, rootElement);
-    ReactDOM.render(element1, rootElement1);
+
+    function Number ({ number }) {
+      return number % 2 === 0 ? <h1>{number}</h1> : <h3>{number}</h3>;
+    }
+    const element1 = (
+      <>
+        <Number number={1} />
+        <Number number={2} />
+        <Number number={3} />
+        <Number number={4} />
+      </>
+    );
+    ReactDOM.render(element1, rootElement);
   </script>
 </body>
 </html>
