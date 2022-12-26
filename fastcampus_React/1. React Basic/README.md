@@ -185,3 +185,85 @@ const element = (
 );
 ReactDOM.render(element, rootElement); // <h3>1</h3> <h1>2</h1> <h3>3</h3> <h1>4</h1>
 ```
+
+## 리액트와 리랜더링
+- 바닐라 js : 변경으로 인해 Element를 다시 그린다.
+- React : 변경된 부분만 다시 그린다.
+
+---
+### React의 앨리먼트는 불변객체(immutable)입니다.
+- 불변객체 : 변하지 않는 객체
+- 우리는 그저 ReactDOM.render(element, rootElement);로 전달할뿐
+- 변경 판단 및 반영은 리액트가 알아서 한다.
+- 앨리먼트 타입이 바뀌면 - 이전 앨리먼트는 버리고 새로 그린다.
+- 앨리먼트 타입이 같다면 - (key를 먼저 비교하고) props를 비교해서 변경사항을 반영한다.
+
+- 리액트의 앨리먼트 : 불변 객체
+- 변경 사항 반영 : 리액트에게 일임
+- 리액트의 비교 : Reconciliation
+- Virtual Dom : 비교시 활용
+---
+
+## 이벤트 핸들러 써보기-1
+- 바닐라JS : on{event} / addEventListener
+- React : on{Event}
+- 카멜케이스 표기법 사용
+
+```js
+const rootElement = document.getElementById("root");
+    
+const handleClick = () => {
+  alert('pressed')
+}
+
+const element = (
+  <button 
+    onClick={handleClick}
+    onMouseOut={() => alert('bye')}>
+    Pressed
+  </button>
+  );
+ReactDOM.render(element, rootElement);
+```
+
+## 이벤트 핸들러 써보기-2
+- 전역변수를 통해 객체 내용을 변경하여 적용한다.
+
+```js
+const rootElement = document.getElementById("root");
+const state = { keyword: "", typing: false, result: "" };
+    
+const App = () => {
+  function handleChange(event) {
+    setState({ typing: true, keyword: event.target.value });  
+  }
+
+  function handleClick() {
+    setState({
+      typing: false,
+      result: `We find results of ${state.keyword}`
+    });
+  }
+
+  return ( 
+    <>
+      <input onChange={handleChange} />
+      <button onClick={handleClick}>search</button>
+      <p>
+        {state.typing ? `Looking for ${state.keyword}...` : state.result}
+      </p>
+    </>
+  )
+};
+
+// 변화된 부분 업데이트, render 재실행
+function setState(newState) {
+  Object.assign(state, newState); // 출처 객체로부터 대상 객체로 속성을 복사한다.
+  render();
+}
+
+function render() {
+  ReactDOM.render(<App />, rootElement);
+}
+render();
+```

@@ -15,39 +15,44 @@
   <div id="root"></div>
 
   <script type="text/babel">
-
     const rootElement = document.getElementById("root");
 
-    const Text = ({ text }) => {
-        // text가 대문자로 시작하면 h1, 소문자로 시작하면 h3
-        if(text.charAt(0) === text.charAt(0).toUpperCase()) {
-          return <h1>{text}</h1>;
-        } else {
-          return <h3>{text}</h3>;
-        }
+    const state = { keyword: "", typing: false, result: "" };
+    
+    const App = () => {
+      function handleChange(event) {
+        setState({ typing: true, keyword: event.target.value });  
+      }
+
+      function handleClick() {
+        setState({
+          typing: false,
+          result: `We find results of ${state.keyword}`
+        });
+      }
+
+      return ( 
+        <>
+          <input onChange={handleChange} />
+          <button onClick={handleClick}>search</button>
+          <p>
+            {state.typing ? `Looking for ${state.keyword}...` : state.result}
+          </p>
+        </>
+      )
     };
 
-    const element = (
-      <>
-        <Text text="abc" /> 
-        <Text text="ABC" />
-      </>
-    ); // <h3>abc</h3 <h1>ABC</h1>
-
-    ReactDOM.render(element, rootElement);
-
-    function Number ({ number }) {
-      return number % 2 === 0 ? <h1>{number}</h1> : <h3>{number}</h3>;
+    // 변화된 부분 업데이트, render 재실행
+    function setState(newState) {
+      Object.assign(state, newState);
+      render();
     }
-    const element1 = (
-      <>
-        <Number number={1} />
-        <Number number={2} />
-        <Number number={3} />
-        <Number number={4} />
-      </>
-    );
-    ReactDOM.render(element1, rootElement);
+
+    function render() {
+      ReactDOM.render(<App />, rootElement);
+    }
+    render();
+
   </script>
 </body>
 </html>
