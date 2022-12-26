@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>React Basic</title>
+
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+  
+  <div id="root"></div>
+  <div id="root1"></div>
+
+  <script type="text/babel">
+
+    const rootElement = document.getElementById("root");
+    const rootElement1 = document.getElementById("root1");
+
+    // jsx
+    const text = "Hello, world 변수에 담기"; // 변수로 넣기
+    const titleClassName = "title123";
+
+    // const element = <h1 className="title">Hello, world</h1>;
+    const element1 = <h1 className={titleClassName}>{text}</h1>;
+
+    const props = {className: titleClassName, children: text };
+    const customH1 = <h1 {...props} />;
+    // const customH1 = {props.className} children={props.children} />;
+    const element = customH1;
+    
+    ReactDOM.render(element, rootElement);
+    ReactDOM.render(element1, rootElement1);
+  </script>
+</body>
+</html>
