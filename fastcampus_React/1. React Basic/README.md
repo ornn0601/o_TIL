@@ -267,3 +267,68 @@ function render() {
 }
 render();
 ```
+
+## 컴포넌트 상태 다루기
+- DOM : 논리 트리
+- 컴포넌트 : 앨리먼트의 집합
+- 앨리먼트 : 요소
+- useState : 상태값을 관리해주는 훅
+
+```html
+<div id="root"></div>
+
+<script type="text/babel">
+  const rootElement = document.getElementById("root");
+
+  const App = () => {
+    const [result, setResult] = React.useState("");
+    const [typing, setTyping] = React.useState(false);
+      
+    const [keyword, setKeyword] = React.useState("");
+      
+    function handleChange(event) {
+      setKeyword(event.target.value);
+      setTyping(true);
+    }
+
+    function handleClick() {
+      setTyping(false);
+      setResult(`We find results of ${keyword}`);
+    }
+
+    return ( 
+      <>
+        <input onChange={handleChange} />
+        <button onClick={handleClick}>search</button>
+        <p>
+          {typing ? `Looking for ${keyword}...` : result}
+        </p>
+      </>
+    )
+  };
+
+  ReactDOM.render(<App />, rootElement);
+</script>
+```
+
+## 컴포넌트 사이트 이펙트
+- 사이트 이펙트 : 부수 효과
+- useState : lazy initialize
+- useEffect : dependency array
+
+```js
+React.useEffect(() => {
+  console.log("effect");
+  window.localStorage.setItem("keyword", keyword);
+}, []);
+```
+
+## 커스텀 훅 만들기
+- 반복 : 함수로
+- 훅들이 반복 : custom Hook으로
+
+## Hook Flow 이해하기 - 1
+- 
+
+```js
+```

@@ -17,41 +17,38 @@
   <script type="text/babel">
     const rootElement = document.getElementById("root");
 
-    const state = { keyword: "", typing: false, result: "" };
-    
     const App = () => {
+      const [result, setResult] = React.useState("");
+      const [typing, setTyping] = React.useState(false);
+      const [keyword, setKeyword] = React.useState(window.localStorage.getItem("keyword"));
+      
+      React.useEffect(() => {
+        console.log("effect");
+        window.localStorage.setItem("keyword", keyword);
+      }, []);
+
       function handleChange(event) {
-        setState({ typing: true, keyword: event.target.value });  
+        setKeyword(event.target.value);
+        setTyping(true);
       }
 
       function handleClick() {
-        setState({
-          typing: false,
-          result: `We find results of ${state.keyword}`
-        });
+        setTyping(false);
+        setResult(`We find results of ${keyword}`);
       }
 
       return ( 
         <>
-          <input onChange={handleChange} />
+          <input onChange={handleChange} value={keyword} />
           <button onClick={handleClick}>search</button>
           <p>
-            {state.typing ? `Looking for ${state.keyword}...` : state.result}
+            {typing ? `Looking for ${keyword}...` : result}
           </p>
         </>
       )
     };
 
-    // 변화된 부분 업데이트, render 재실행
-    function setState(newState) {
-      Object.assign(state, newState);
-      render();
-    }
-
-    function render() {
-      ReactDOM.render(<App />, rootElement);
-    }
-    render();
+    ReactDOM.render(<App />, rootElement);
 
   </script>
 </body>
