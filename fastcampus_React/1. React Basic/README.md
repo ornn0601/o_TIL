@@ -327,8 +327,11 @@ React.useEffect(() => {
 - 반복 : 함수로
 - 훅들이 반복 : custom Hook으로
 
-## Hook Flow 이해하기 - 1
-- 
+## Hook Flow 이해하기
+- hook flow : hook들의 호출 타이밍
+- useState : setState시 prev이 주입된다.
+- useEffect : render가 끝난 뒤
+- update시 : useEffect clean up / useEffect
+- dependency array : 전달받은 값의 변화 있는 
 
-```js
-```
+
