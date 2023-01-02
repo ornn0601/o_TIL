@@ -10,45 +10,43 @@
   <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
+<style>
+
+  .button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+
+  .button2 {background-color: #008CBA;} /* Blue */
+  .button3 {background-color: #f44336;} /* Red */ 
+  .button4 {background-color: #e7e7e7; color: black;} /* Gray */ 
+  .button5 {background-color: #555555;} /* Black */
+
+</style>
 <body>
   
   <div id="root"></div>
 
   <script type="text/babel">
-    const rootElement = document.getElementById("root");
+    const element = (
+      <>
+        <button className="button" >Green</button>
+        <button className="button button2">Blue</button>
+        <button className="button button3">Red</button>
+        <button className="button button4">Gray</button>
+        <button className="button button5">Black</button>
+      </>
+    );
 
-    const App = () => {
-      const [result, setResult] = React.useState("");
-      const [typing, setTyping] = React.useState(false);
-      const [keyword, setKeyword] = React.useState(window.localStorage.getItem("keyword"));
-      
-      React.useEffect(() => {
-        console.log("effect");
-        window.localStorage.setItem("keyword", keyword);
-      }, []);
-
-      function handleChange(event) {
-        setKeyword(event.target.value);
-        setTyping(true);
-      }
-
-      function handleClick() {
-        setTyping(false);
-        setResult(`We find results of ${keyword}`);
-      }
-
-      return ( 
-        <>
-          <input onChange={handleChange} value={keyword} />
-          <button onClick={handleClick}>search</button>
-          <p>
-            {typing ? `Looking for ${keyword}...` : result}
-          </p>
-        </>
-      )
-    };
-
-    ReactDOM.render(<App />, rootElement);
+    ReactDOM.render(element, document.getElementById("root"));
 
   </script>
 </body>
