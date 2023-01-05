@@ -25,8 +25,7 @@
   z-index:100; 
   width:100%; 
   height:70px; 
-  border-bottom:1px;
-  solid rgba(255,255,255,.2); 
+  border-bottom:1px solid rgba(255,255,255,.2); 
   transition: background .5s;
 }
 .header_wrap .logo {
@@ -88,6 +87,7 @@
   outline-width: 0; 
   cursor: pointer; 
   transition:.3s;
+  background: transparent;
 }
 
 .nav_list .list li:nth-child(2) button {
@@ -193,6 +193,7 @@
   width:50%; 
   box-sizing: border-box;
 }
+
 .sec_list_overlap .list_overlap .list li .img_box {
   opacity: 0; 
   transform:translateY(20px); 
@@ -202,7 +203,6 @@
   -ms-transform:translateY(20px); 
   transition:opacity .5s, transform .5s;
 }
-
 .sec_list_overlap.active .list_overlap .list li .img_box {
   opacity: 1; 
   transform:translateY(0px); 
@@ -226,7 +226,10 @@
 }
 .sec_list_overlap .list_overlap .list li .img_box img {
   transition: transform .5s ease;
+  width: 100%;
 }
+
+/* 떨림현상 제거 */
 .sec_list_overlap .list_overlap .list li .img_box:hover img {
   transform:scale(1.2) rotate(-0.01deg); 
   -webkit-transform:scale(1.2) rotate(-0.01deg); 
@@ -272,6 +275,7 @@
 }
 .sec_parallax .list_banner .img_box img {
   transition: transform .5s ease;
+  width: 100%;
 }
 .sec_parallax .list_banner .img_box:hover img {
   transform:scale(1.2) rotate(-0.01deg); 
