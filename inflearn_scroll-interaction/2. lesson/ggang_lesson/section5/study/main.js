@@ -18,24 +18,27 @@ $(function() {
   let parallaxStartValue = 200;
   let parallaxMoveDistance;
 
+  // let isMac = navigator.platform.indexOf('Mac') >= 0;
+  // console.log(navigator.platform, isMac);
+
   // 스크롤할때 계속 호출되어야 하는 함수
+  // Math.max(A,B) : 두 값 중 큰 값을 반환, 상대 값이 - 가 들어가면 0이 반환 됨
   function setProperty() {
     winScrollTop = $(window).scrollTop();
     sectionMainTop = sectionMainVisual.offset().top; // el의 y좌표값을 가져옴
     sectionMainBottom = sectionMainTop + sectionMainVisual.height();
 
     parallaxOffsetTop = parallaxBody.offset().top;
-    parallaxThisTop = winScrollTop - parallaxOffsetTop; // 패럴렉스 섹션에 도착
-    parallaxPercent = (parallaxThisTop / parallaxSpeed) * 100;
-    parallaxMoveDistance = Math.max(parallaxStartValue - parallaxStartValue, Math.min(parallaxStartValue, parallaxStartValue - (parallaxStartValue * (parallaxPercent / 100))));; 
-    
+    parallaxThisTop = winScrollTop - parallaxOffsetTop; // 패럴렉스 섹션에 도착 0
+    parallaxPercent = (parallaxThisTop / parallaxSpeed) * 100; // (0 / 1200) * 100
+    parallaxMoveDistance = Math.max(0, Math.min(parallaxStartValue, parallaxStartValue - (parallaxStartValue * (parallaxPercent / 100)))); // parallaxStartValue - parallaxStartValue = 0
   }
 
   // 다중 패럴렉스
   function motionParallax() {
-    if(parallaxPercent > 20){
+    if (parallaxPercent > 20) {
 			$('.sec_parallax').addClass('active');
-		}else {
+		} else {
 			$('.sec_parallax').removeClass('active');
 		}
 

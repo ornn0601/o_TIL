@@ -1,0 +1,588 @@
+/* common 디자인 해더, 푸터 레이아웃 */
+.wrap {
+  position: relative;
+  overflow: hidden;
+}
+.inner {
+  max-width: 1100px;
+  height: 100%;
+  margin: 0 auto;
+}
+.com_tit01 {
+  font-family: "Pretendard Variable", Pretendard, sans-serif;
+  font-size: 60px;
+  color: #fff;
+  text-align: center;
+}
+.com_txt01 {
+  font-family: "Pretendard Variable", Pretendard, sans-serif;
+  max-width: 70%;
+  margin: 0 auto;
+  font-size: 24px;
+  color: #fff;
+  text-align: center;
+}
+
+/* header */
+.header_wrap {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  height: 70px;
+  border-bottom: 1px solid rgba(255, 255, 255, .2);
+}
+.header_wrap .logo {
+  margin-top: 15px;
+  padding-left: 20px;
+  font-size: 24px;
+  color: #fff;
+  
+}
+
+/* footer */
+.footer {
+  position: relative;
+  height: 300px;
+  background: #111 
+}
+.footer .text_area {
+  position: relative;
+  z-index: 20;
+  padding: 20px;
+  
+}
+.footer .text_area p {
+  color: #fff;
+  font-size: 34px;
+  
+}
+
+.tb_row {
+  display: table;
+  width: 100%;
+  height: 100%;
+  
+}
+.tb_row .tb_cell {
+  display: table-cell;
+  vertical-align: middle;
+  
+}
+
+/* main */
+/* 텍스트 마스크 효과 */
+.sec01 {
+	position: relative;
+	height: 100vh;
+	background: #111;
+}
+
+.sec01 .nav_list {
+	position: relative;
+	z-index: 20;
+}
+
+.sec01 .nav_list .list {}
+.sec01 .nav_list .list li {}
+
+.sec01 .nav_list .list li a {
+	overflow: hidden; 
+	position: relative;
+	display: inline-block;
+	font-size: 100px;
+  font-weight: 700;
+	line-height: 1;
+	color: #fff;
+	transition: transform .5s;
+}
+
+/* 흰색 배경 */
+.sec01 .nav_list .list li a .mask {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  width: 0;
+  height: 100%;
+  background-color: #fff;
+  animation: text_mask 2s 1 cubic-bezier(0.37, 0.95, 0.49, 1.01) both;
+  animation-play-state: paused;  /* ie 대응을 위해 분리 */
+}
+.sec01.active .nav_list .list li a .mask {
+  animation-play-state: running;
+}
+
+/* 텍스트 */
+.sec01 .nav_list .list li a .txt {
+  font-family: "Pretendard Variable", Pretendard, sans-serif;
+	position: relative;
+	z-index: 20;
+	display: block;
+  animation: text_opacity 2s 1s 1 cubic-bezier(0.37, 0.95, 0.49, 1.01) both;
+  animation-play-state: paused;  /* ie 대응을 위해 분리 */
+}
+.sec01.active .nav_list .list li a .txt {
+  animation-play-state: running;
+}
+
+/* hover 밑줄 */
+.sec01 .nav_list .list li a .mask2 {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	z-index: -1;
+	width: 0%;
+	height: 40%;
+	background: #e9c400;
+	transition: width .5s cubic-bezier(0.24, 0.77, 0.32, 0.95);
+}
+
+.sec01 .nav_list .list li a:hover {
+	transform: translateX(-10px);
+	-webkit-transform: translateX(-10px);
+	-moz-transform: translateX(-10px);
+	-o-transform: translateX(-10px);
+	-ms-transform: translateX(-10px);
+}
+.sec01 .nav_list .list li a:hover .mask2 {
+	width: 100%;
+}
+
+/* 배경 이미지 */
+.sec01 .bg_rotate {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	z-index: 10;
+	width: 1200px;
+	height: 1215px;
+	margin-left: -357px;
+	margin-top: -350px;
+	background-image: url('../images/bg_rotate01.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	opacity: .15;
+  animation: rotate_bg 40s infinite linear;
+  animation-play-state: paused;  /* ie 대응을 위해 분리 */
+}
+.sec01.active .bg_rotate {
+  animation-play-state: running;
+}
+
+/* 애니메이션 : 흰색배경 */
+@keyframes text_mask {
+  0% {
+    width: 0;
+    /* transform: translateX(0%); */
+    margin-left: 0;
+  }
+  50% {
+    width: 100%;
+    /* transform: translateX(0%); */
+    margin-left: 0;
+  }
+  100% {
+    width: 100%;
+    /* transform: translateX(101%); 깜박임 제거 +1 */
+    margin-left: 101%;
+  }
+}
+
+/* 애니메이션 : 글씨 */
+@keyframes text_opacity {
+  0% {
+    opacity: 0;
+    color: #3535ff;
+    transform: translateX(-50%);
+  }
+  100% {
+    opacity: 1;
+    color: #fff;
+    transform: translateX(0%);
+  }
+}
+
+/* 애니메이션 : 배경 이미지 */
+@keyframes rotate_bg {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* ********** ********** ********** ********** ********** */
+
+/* 날자 */
+/* 오늘 날짜 카운트 */
+.section_today {
+	overflow: hidden;
+	position: relative;
+	height: 100vh;
+	background: #000;
+	text-align: center;
+}
+
+.section_today .date_box {
+	height: 100%;
+}
+
+.section_today .date_box .t_date {
+	position: absolute;
+	left: 20px;
+	top: 400px;
+	z-index: 100;
+	font-size: 300px;
+	color: #fff;
+	opacity: .1;
+	-webkit-text-fill-color: transparent;
+	-webkit-text-stroke: 2px #fff;
+}
+
+.section_today.active .date_box .t_date {
+	transform: translateX(0%);
+}
+
+.section_today .date_box .date_count {
+  overflow: hidden;
+	position: relative;
+	display: inline-block;
+	height: 200px;;
+}
+
+.section_today .date_box .date_count:after {
+	clear: both;
+	display: block;
+	content: '';
+}
+
+
+.section_today .date_box .date_count .count_box {
+	float: left;
+  animation: count_date 2.8s 1 ease-out both;
+  animation-play-state: paused;  /* ie 대응을 위해 분리 */
+}
+.section_today .date_box .date_count .count_box.active {
+  animation-play-state: running;
+}
+
+.section_today .date_box .date_count .count_box span {
+  font-family: "Pretendard Variable", Pretendard, sans-serif;
+  font-weight: 700;
+	font-size: 200px;
+	display: block;
+	height: 200px;
+	color: #fff;
+	line-height: 1;
+	text-align: center;
+	-webkit-text-fill-color: transparent;
+	-webkit-text-stroke: 6px #fff;
+}
+
+/* 날자 회전 애니메이션 */
+@keyframes count_date {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-4800px); /* 높이 x 롤링될 개수 : 200 z 24 */
+  }
+}
+
+/* ********** ********** ********** ********** ********** */
+
+/* 제품 이미지 */
+
+/* 이미지 마스크 */
+.section_product {
+	background: #000;
+}
+.section_product .prd_mask {}
+.section_product .prd_mask .tit_wrap {
+	padding: 120px 0 80px 0;
+}
+
+.section_product .prd_mask .img_list {
+	width: 60%;
+	margin: 0 auto;
+}
+.section_product .prd_mask .img_list:after {
+	clear: both;
+	display: block;
+	content: '';
+}
+
+.section_product .prd_mask .img_list li {
+	overflow: hidden;
+	position: relative;
+	display: inline-block;
+	width: calc(50% - 40px);
+	padding-right: 20px;
+	margin-bottom: 20px;
+}
+/* 딤 */
+.section_product .prd_mask .img_list li::after {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  content:'';
+  transition: 2.5s;
+}
+.section_product .prd_mask.active .img_list li::after {
+  width: 0;
+}
+/* 짝수번째 선택 */
+.section_product .prd_mask .img_list li:nth-child(even) {
+	top: -20px;
+}
+.section_product .prd_mask .img_list li:nth-child(even):after {
+	right: auto;
+	left: 0;
+}
+
+.section_product .prd_mask .img_list li .img_content {
+	font-size: 0;
+  transform: translateX(-101%);
+  transition: 1.2s .5s;
+}
+.section_product .prd_mask.active .img_list li .img_content {
+  transform: translateX(0);
+}
+
+.section_product .prd_mask .img_list li .img_content img {
+	width: 100%;
+}
+
+/* 텍스트와 이미지 패턴 */
+.section_product .text_img {
+	padding-top: 150px;
+	padding-bottom: 100px;
+	text-align: center;
+	font-size: 0;
+}
+.section_product .text_img .text_area {
+	display: inline-block;
+	width: 60%;
+	padding: 0 50px;
+	color: #fff;
+	font-size: 40px;
+	vertical-align: middle;
+	text-align: right;
+	box-sizing: border-box;
+  opacity: 0;
+  transform: translateX(-150px);
+  transition: 1s;
+}
+.section_product .text_img.active .text_area {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.section_product .text_img .text_area h3 {
+	font-family: "Pretendard Variable", Pretendard, sans-serif;
+	font-size: 64px;
+}
+.section_product .text_img .text_area p {
+	font-family: "Pretendard Variable", Pretendard, sans-serif;
+	font-size: 24px;
+}
+
+.section_product .text_img .img_area {
+	position: relative;
+	display: inline-block;
+	width: 30%;
+	vertical-align: middle;
+}
+.section_product .text_img .img_area::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  content: '';
+  transition: 2s .5s cubic-bezier(0.32, 0.9, 0.45, 1.04);
+}
+.section_product .text_img.active .img_area::after {
+  height: 0;
+}
+
+/* ********** ********** ********** ********** ********** */
+
+/* 텍스트 오버랩 효과 */
+.section_textmask {
+	overflow: hidden;
+	position: relative;
+	padding-top: 160px;
+	padding-bottom: 210px;
+	background: #000;
+}
+
+.section_textmask .txt_area {}
+.section_textmask .txt_area .tit_wrap {}
+
+.section_textmask .txt_area .motion_area {
+	position: relative;
+	margin-top: 100px;
+	font-size: 150px;
+	line-height: 1;
+	color: #fff;
+  font-family: "Pretendard Variable", Pretendard, sans-serif;
+  font-weight: 900;
+}
+
+.section_textmask .txt_area .motion_area .text_box {
+	overflow: hidden;
+	text-align: center;
+}
+
+.section_textmask .txt_area .motion_area .text_box .left {
+	overflow: hidden;
+	float: left;
+	width: 50%;
+	height: 100%;
+}
+
+/* 200% : 부모 요소의 2배 */
+.section_textmask .txt_area .motion_area .text_box .left p {
+	color: #fff;
+  width: 200%; 
+}
+
+.section_textmask .txt_area .motion_area .text_box .left p span {
+	display: inline-block;
+	padding-bottom: 5px;
+	text-align: center;
+	white-space: nowrap;
+  animation: move_text_mask 2.2s 1 both ease-in-out;
+  animation-play-state: paused;  /* ie 대응을 위해 분리 */
+}
+
+.section_textmask.active .txt_area .motion_area .text_box .left p span {
+  animation-play-state: running;
+}
+
+.section_textmask .txt_area .motion_area .text_box .right {
+	overflow: hidden;
+	float: left;
+	width: 50%;
+	height: 100%;
+}
+
+/* margin-left: -100%; 화면의 절반 만큼 이동 */
+.section_textmask .txt_area .motion_area .text_box .right p {
+	color: #00b8ff;
+  width: 200%;
+  margin-left: -100%;
+}
+
+.section_textmask .txt_area .motion_area .text_box .right p span {
+	display: inline-block;
+	padding-bottom: 5px;
+	text-align: center;
+	white-space: nowrap;
+  animation: move_text_mask 2.2s 1 both ease-in-out;
+  animation-play-state: paused;  /* ie 대응을 위해 분리 */
+}
+.section_textmask.active .txt_area .motion_area .text_box .right p span {
+  animation-play-state: running;
+} 
+
+.section_textmask .txt_area .motion_area .text_box.type02 {}
+
+.section_textmask .txt_area .motion_area .text_box.type02 .left p {
+	color: #00b8ff;
+}
+
+.section_textmask .txt_area .motion_area .text_box.type02 .right p {
+	color: #fff;
+}
+
+.section_textmask .txt_area .motion_area .text_box.type02 p span {
+	animation-delay: .3s !important;
+}
+.section_textmask .txt_area .motion_area .text_box.type03 p span {
+	animation-delay: .6s !important;
+}
+
+@keyframes move_text_mask {
+  0% {
+    /* transform: translateX(-50%); */
+    margin-left: -50%; /* ie 대응 */
+  }
+  50% {
+    /* transform: translateX(50%); */
+    margin-left: 50%;
+  }
+  100% {
+    /* transform: translateX(0%); */
+    margin-left: 0;
+  }
+}
+
+/* ********** ********** ********** ********** ********** */
+
+/* 배경 오버랩 효과 */
+.section_overlap {
+	overflow: hidden;
+	position: relative;
+	padding-top: 100px;
+	padding-bottom: 80px;
+}
+
+.section_overlap .overlap_box {}
+.section_overlap .overlap_box .tit_wrap {
+	position: relative;
+	z-index: 60;
+	padding-bottom: 50px;
+}
+.section_overlap .overlap_box .img_device {
+	position: relative;
+	z-index: 50;
+	width: 300px;
+	margin: 0 auto;
+}
+
+.section_overlap .overlap_box .bg_change {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+.section_overlap .overlap_box .bg_change.color01 {
+  z-index: 40;
+  background-color: #000;
+  transition: width .5s .2s;
+}
+.section_overlap .overlap_box .bg_change.color02 {
+  z-index: 30;
+  background-color: #272727;
+  transition: width .5s .7s;
+}
+.section_overlap .overlap_box .bg_change.color03 {
+  z-index: 20;
+  background-color: #c2bada;
+  transition: width .5s 1.2s;
+}
+.section_overlap .overlap_box .bg_change.color04 {
+  z-index: 10;
+  background-color: #000;
+}
+
+.section_overlap.active .overlap_box .bg_change.color01 {
+  width: 0px;
+}
+.section_overlap.active .overlap_box .bg_change.color02 {
+  width: 0px;
+}
+.section_overlap.active .overlap_box .bg_change.color03 {
+  width: 0px;
+}
