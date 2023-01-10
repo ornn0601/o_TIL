@@ -41,7 +41,7 @@
 
 /* fix_motion : 스크롤 거리 */
 .fix_motion {
-  height: 7000px;
+  height: 10000px;
 }
 .fix_motion .fix_wrap {
   overflow: hidden;
