@@ -79,3 +79,22 @@
 
 ---
 ## 섹션 2. CSS와 자바스크립트 적용하기
+### CSS 적용하기
+1. 외부에서 작성하기
+- <style></style>
+2. svg내부에 작성하기 (인라인 형태)
+- 장점 : svg 파일을 단독으로 사용할 수 있다.
+- 오류를 대응하기 : <svg><style><![CDATA[  css  ]]></style></svg>
+
+### 자바스크립트 적용하기
+1. 외부에서 작성하기
+- 동일하게 작성 가능
+```js
+const faceElem = document.querySelector('.face');
+faceElem.addEventListener('click', function () {
+  this.classList.toggle('ani-on');
+});
+```
+
+2. svg내부에 작성하기 (인라인 형태)
+- 위치 : 스타일 태그 아래
