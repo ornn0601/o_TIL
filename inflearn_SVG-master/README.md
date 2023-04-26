@@ -189,3 +189,38 @@ faceElem.addEventListener('click', function () {
   <path d="M 100 150 C 100 150, 300 50, 500 250"></path>
 </svg>
 ```
+
+### 3. stroke 모양 조정하기
+- 일러스트 : cap, corner 기능
+- stroke-linecap: butt;
+- stroke-linecap: round;
+- stroke-linecap: square;
+- stroke-linejoin: miter; (기본값)
+- stroke-linejoin: round; 
+- stroke-linejoin: bevel; 
+
+```html
+<style>
+  path {
+    stroke: tomato;
+    stroke-width: 5px;
+    stroke-linecap: butt;
+  }
+</style>
+<svg class="shapes">
+  <path d="M 300 200 L 300 100 L 400 200"></path>
+</svg>
+```
+
+### 4. 그룹만들기
+- <g></g>
+- 그룹으로 공통적으로 무언가를 할 수 있다.
+
+```html
+<svg class="shapes">
+  <g class="group-1">
+    <path d="M 300 200 L 300 100 L 400 200"></path>
+    <path d="M 300 200 L 300 100 L 400 200"></path>
+  </g>
+</svg>
+```
