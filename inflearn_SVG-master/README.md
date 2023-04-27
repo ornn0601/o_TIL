@@ -224,3 +224,283 @@ faceElem.addEventListener('click', function () {
   </g>
 </svg>
 ```
+
+---
+## 섹션4. 텍스트
+### 1. 글자 쓰기
+- <text><</text>
+
+```html
+<style>
+  text {
+    font-size: 1.5rem;
+    font-weight: 400;
+    fill: red; 
+  }
+</style>
+<svg class="svg">
+  <text x="20" y="50">Hello. SVG! </text>
+</svg>
+```
+
+### 2. 곡선에 따라 글자 쓰기
+- <defs></defs>
+- 참조정보
+- path의 id = textPath의 href 연결
+
+```html
+<style>
+  text {
+    font-size: 1.5rem;
+    font-weight: 400;
+    fill: red; 
+  }
+  path {
+    stroke: red;
+    fill: transparent;
+  }
+</style>
+<svg class="svg">
+  <defs>
+    <path id="text-curve" d="M 50 400 C 50 400, 300 500, 400 400 C 400 400, 600 170, 700 300"></path>
+  </defs>
+  <text x="20" y="50">
+    <textPath href="#text-curve">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis animi modi nostrum fugiat quo distinctio cum amet vitae ipsa quam rem doloremque, eligendi aliquid. Facilis tenetur molestiae earum voluptates id
+    </textPath>
+  </text>
+</svg>
+```
+
+### 3. 텍스트 부분 스타일링 
+- <tspan></tspan>
+
+```html
+<style>
+  tspan {
+    fill: blue;
+  }
+  .special {
+    fill: blue;
+  }
+</style>
+<svg class="svg">
+  <defs>
+    <path id="text-curve" d="M 50 400 C 50 400, 300 500, 400 400 C 400 400, 600 170, 700 300"></path>
+  </defs>
+  <text x="20" y="50">
+    <textPath href="#text-curve">Lorem <tspan class="special">ipsum dolor</tspan> sit amet consectetur adipisicing elit. Veritatis animi modi nostrum fugiat quo distinctio cum amet vitae ipsa quam rem doloremque, eligendi aliquid. Facilis tenetur molestiae earum voluptates id
+    </textPath>
+  </text>
+</svg>
+```
+
+---
+## 섹션5. 효과
+### 1. 그라디언트
+- svg 파일에 접속하여 수정
+- linearGradient : 선형
+- radialGradient : 원형
+- <![CDATA[ ]]> : xml 파서 오류 대응, css js를 svg내부에서 사용할 때 발생하는 오류 대응
+
+```html
+<style>
+  .svg-obj {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 200px;
+    margin: auto;
+  }
+</style>
+
+<object class="svg-obj" data="images/face_hair.svg" type="image/svg+xml"></object>
+
+<svg>
+  <defs>
+    <linearGradient id="hair-color">
+      <stop offset="0%" stop-color="yellow" />
+      <stop offset="50%" stop-color="hotpink" />
+      <stop offset="100%" stop-color="deepskyblue" />
+    </linearGradient>
+
+    <radialGradient id="hair-color">
+      <stop offset="0%" stop-color="yellow" />
+      <stop offset="50%" stop-color="hotpink" />
+      <stop offset="100%" stop-color="deepskyblue" />
+    </<radialGradient>
+
+    <style>
+      <![CDATA[
+        .hair {
+          fill: url('#hair-color');
+        }
+      ]]>
+    </style>
+  </defs>
+  <path class="hair" d="~~"></path>
+</svg>
+```
+
+### 2. 패턴1 - 패턴의 기본적이 사용법
+- viewBox를 설정하여 화면 비율로 구성할 수 있게 가능하다.
+- viewBox : 전체비율
+- circle : viewBox를 기준으로 크기를 비율로 구성한다.
+
+```html
+<style>
+  svg {
+    /* width: 500;
+    height: 500; */
+    width: 100%;
+    height: 100%;
+    background: #ddd;
+  }
+  .pattern-circle {
+    fill: #fff000;
+  }
+  .gb-rect {
+    fill: url(#bg-pattern);
+  }
+</style>
+
+<svg viewBox="0 0 500 500">
+  <defs>
+    <pattern id="bg-pattern" x="0" y="0" width="0.1" height="0.1">
+      <circle cx="50" cy="50" r="50" class="pattern-circle">
+    </pattern>
+  </defs>
+
+  <rect class="gb-rect" x="0" y="0" width="100%" height="100%" fill="url(#bg-pattern)"></rect>
+</svg>
+```
+
+### 3. 패턴2 - 애니메이션이 적용된 일러스트 패턴
+- 배경 패턴 전체에 애니메이션을 줄 수 있다.
+
+```html
+<style>
+  body {
+    background: url(images/face_s.svg);
+    background-size: 100px;
+  }
+</style>
+
+<svg viewBox="0 0 500 500">
+  <defs>
+    <style>
+      @keyframes eye-ani {
+        from { transform: scaleY(1); }
+        to { transform: scaleY(0.2); }
+      }
+      .right-eye {
+        animation: eye-ani 0.5s alternate infinite;
+      }
+    </style>
+  </defs>
+
+  <circle class="right-eye" />
+</svg>
+```
+
+### 4. 마스크1 - 마스크의 기본적인 사용법
+- 흰색영역은 보이고, 검정색 영역은 보이지 않는다.
+- circle을 white으로 변경한다.
+- 회색계열은 반투명으로 보인다.
+- 검정색에 수렴할수록 흐려지고, 흰색으로 갈수록 진해진다.
+
+```html
+<style>
+  .the-svg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #ddd;
+  }
+  .the-svg text {
+    font-size: 5rem;
+  }
+</style>
+
+<svg class="the-svg">
+  <defs>
+    <mask id="mask-circle">
+      <circle cx="250" cy="70" r="40" fill="#fff"></circle>
+    </mask>
+  </defs>
+
+  <g mask="url(#mask-circle)">
+    <text x="10" y="10">Hello SVG! Hello SVG! Hello SVG!</text>
+  </g>
+</svg>
+```
+
+### 5. 마스크2 - JS을 이용해 돋보기 효과 만들기
+- 
+
+```html
+<style>
+  .the-svg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #ddd;
+  }
+  .the-svg text {
+    font-size: 5rem;
+  }
+</style>
+
+<svg class="the-svg">
+  <defs>
+    <pattern id="pattern-bg" x="0" y="0" width="100%" height="100%">
+      <path> 내용 </path>
+      <circle class="left-eye" cx="43.8" cy="41.98" r="4.69"></circle>
+    </pattern>
+
+    <mask id="mask-circle">
+      <circle cx="250" cy="70" r="40" fill="#fff"></circle>
+    </mask>
+
+    <style>
+      @keyframes eye-ani {
+        to { transform: scaleY(0.2); }
+      }
+
+      .left-eye {
+        transform-origin: 44px 42px;
+        animation: eye-ani 1s alternate infinite;
+      }
+      .bg {
+        fill: url(#pattern-bg);
+      }
+    </style>
+
+    <script >
+      window.addEventListener('DOMContentLoaded', () => {
+        const magnifierElem = document.querySelector('.magnifier');
+        const maskElem = document.querySelector('#mask-circle');
+
+        window.addEventListener('mousemove', (e) => {
+          magnifierElem.style.transform = `translate(${e.clientX}px , ${e.clientY}px)`;
+          maskElem.style.transform = `translate(${e.clientX}px , ${e.clientY}px)`;
+        });
+      });
+    </script>
+  </defs>
+
+  <path class="magnifier" d="돋보기패스" />
+
+  <g mask="url(#mask-circle)">
+    <rect class="bg" x="0" y="0" width="100%" height="100%">
+  </g>
+</svg>
+```
+
+---
+## 섹션6. Stroke 애니메이션
