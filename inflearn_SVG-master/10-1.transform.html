@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transform</title>
+  <style> 
+    .box-container {
+      display: flex;
+    }
+    .box {
+      width: 100px;
+      height: 100px;
+      border: 2px solid #000;
+      background: rgba(255, 255, 0, .7);
+      transition: 0.3s;
+    }
+    /* 순서 : x y */
+    .box:hover {
+      /* transform: scale(2) rotate(45deg); */
+      /* transform: skewY(-30deg); */
+      /* transform: translate(30px, 10px); */
+      transform: scale(1.5);
+      transform-origin: 0% 0%;
+    }
+
+
+
+  </style>
+</head>
+<body>
+  <h1>CSS Transform</h1>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis sed quae labore aperiam delectus quasi commodi quisquam laborum quos, ea, illo itaque amet nostrum doloribus, earum minus pariatur et tenetur.
+  Veritatis quas eligendi omnis fuga quisquam, quis eaque laboriosam accusantium molestias ullam neque nihil, hic, dicta nemo aliquam provident iure minima officiis sed consequuntur accusamus. Inventore officiis nostrum sit quisquam?
+  Ipsum possimus accusamus porro, velit quo doloremque odio labore, illum asperiores earum repellat sunt, nostrum maiores laboriosam dignissimos. Optio omnis asperiores nisi laboriosam vitae itaque velit praesentium aperiam inventore accusamus.</p>
+
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis sed quae labore aperiam delectus quasi commodi quisquam laborum quos, ea, illo itaque amet nostrum doloribus, earum minus pariatur et tenetur.
+  Veritatis quas eligendi omnis fuga quisquam, quis eaque laboriosam accusantium molestias ullam neque nihil, hic, dicta nemo aliquam provident iure minima officiis sed consequuntur accusamus. Inventore officiis nostrum sit quisquam?
+  Ipsum possimus accusamus porro, velit quo doloremque odio labore, illum asperiores earum repellat sunt, nostrum maiores laboriosam dignissimos. Optio omnis asperiores nisi laboriosam vitae itaque velit praesentium aperiam inventore accusamus.</p>
+  <div class="box-container">
+    <div class="box">A</div>
+    <div class="box">B</div>
+    <div class="box">C</div>
+    <div class="box">D</div>
+    <div class="box">E</div>
+  </div>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis sed quae labore aperiam delectus quasi commodi quisquam laborum quos, ea, illo itaque amet nostrum doloribus, earum minus pariatur et tenetur.
+  Veritatis quas eligendi omnis fuga quisquam, quis eaque laboriosam accusantium molestias ullam neque nihil, hic, dicta nemo aliquam provident iure minima officiis sed consequuntur accusamus. Inventore officiis nostrum sit quisquam?
+  Ipsum possimus accusamus porro, velit quo doloremque odio labore, illum asperiores earum repellat sunt, nostrum maiores laboriosam dignissimos. Optio omnis asperiores nisi laboriosam vitae itaque velit praesentium aperiam inventore accusamus.</p>
+
+</body>
+</html>
