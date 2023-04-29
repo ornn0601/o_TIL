@@ -1,7 +1,7 @@
 # SVG MASTERING
 
 ## 섹션1. SVG의 개념과 기본적인 사용법
-### 1. SVG란
+### 1.SVG란
 1) 기본 설명
 - 확장 가능한 벡터 그래픽 (Scalable Vector Graphics)
 - XML 기반의 2차원 그래픽
@@ -21,7 +21,7 @@
 - 저수준(low-level) API로 코딩량이 많고 까다로움
 - 크기가 커질수록 성능이 떨어짐
 
-### 2. HTML 문서에 SVG를 넣는 여러가지 방법들
+### 2.HTML 문서에 SVG를 넣는 여러가지 방법들
 1) <img> 태그
 ```html
 <img src="images/studiomeal.svg" alt="이미지" />
@@ -50,7 +50,7 @@
 <object data="images/studiomeal.svg" type="image/svg+xml">
 ```
 
-### 3. SVG의 크기 설정
+### 3.SVG의 크기 설정
 - 반응형으로 움직여야하기 때문에 고정 크기는 설정하지 않는다.
 - viewBox : 보이는 뷰의 크기를 나타냄.
 - "x y width height"
@@ -77,14 +77,14 @@
 
 ---
 ## 섹션2. CSS와 자바스크립트 적용하기
-### 1. CSS 적용하기
+### 1.CSS 적용하기
 1. 외부에서 작성하기
 - <style></style>
 2. svg내부에 작성하기 (인라인 형태)
 - 장점 : svg 파일을 단독으로 사용할 수 있다.
 - 오류를 대응하기 : <svg><style><![CDATA[  css  ]]></style></svg>
 
-### 2. 자바스크립트 적용하기
+### 2.자바스크립트 적용하기
 1. 외부에서 작성하기
 - 동일하게 작성 가능
 ```js
@@ -99,7 +99,7 @@ faceElem.addEventListener('click', function () {
 
 ---
 ## 섹션3. 그리기
-### 1. 기본도형 그리기
+### 1.기본도형 그리기
 - 원은 중심점을 잡는다.
 - cx : center x
 - r : 반지름
@@ -129,7 +129,7 @@ faceElem.addEventListener('click', function () {
 </svg>
 ```
 
-### 2. 직선 그리기
+### 2.직선 그리기
 1) <line></line>
 - x1 : 시작지점의 x
 - x2 : 끝지점의 x
@@ -149,7 +149,7 @@ faceElem.addEventListener('click', function () {
 </svg>
 ```
 
-### 3. path로 그리기
+### 3.path로 그리기
 - 자유그리기
 - 일러스터에서 펜툴
 - d라는 속성으로 그린다.
@@ -190,7 +190,7 @@ faceElem.addEventListener('click', function () {
 </svg>
 ```
 
-### 3. stroke 모양 조정하기
+### 3.stroke 모양 조정하기
 - 일러스트 : cap, corner 기능
 - stroke-linecap: butt;
 - stroke-linecap: round;
@@ -212,7 +212,7 @@ faceElem.addEventListener('click', function () {
 </svg>
 ```
 
-### 4. 그룹만들기
+### 4.그룹만들기
 - <g></g>
 - 그룹으로 공통적으로 무언가를 할 수 있다.
 
@@ -227,7 +227,7 @@ faceElem.addEventListener('click', function () {
 
 ---
 ## 섹션4. 텍스트
-### 1. 글자 쓰기
+### 1.글자 쓰기
 - <text><</text>
 
 ```html
@@ -243,7 +243,7 @@ faceElem.addEventListener('click', function () {
 </svg>
 ```
 
-### 2. 곡선에 따라 글자 쓰기
+### 2.곡선에 따라 글자 쓰기
 - <defs></defs>
 - 참조정보
 - path의 id = textPath의 href 연결
@@ -271,7 +271,7 @@ faceElem.addEventListener('click', function () {
 </svg>
 ```
 
-### 3. 텍스트 부분 스타일링 
+### 3.텍스트 부분 스타일링 
 - <tspan></tspan>
 
 ```html
@@ -296,7 +296,7 @@ faceElem.addEventListener('click', function () {
 
 ---
 ## 섹션5. 효과
-### 1. 그라디언트
+### 1.그라디언트
 - svg 파일에 접속하여 수정
 - linearGradient : 선형
 - radialGradient : 원형
@@ -343,7 +343,7 @@ faceElem.addEventListener('click', function () {
 </svg>
 ```
 
-### 2. 패턴1 - 패턴의 기본적이 사용법
+### 2.패턴1 - 패턴의 기본적이 사용법
 - viewBox를 설정하여 화면 비율로 구성할 수 있게 가능하다.
 - viewBox : 전체비율
 - circle : viewBox를 기준으로 크기를 비율로 구성한다.
@@ -376,7 +376,7 @@ faceElem.addEventListener('click', function () {
 </svg>
 ```
 
-### 3. 패턴2 - 애니메이션이 적용된 일러스트 패턴
+### 3.패턴2 - 애니메이션이 적용된 일러스트 패턴
 - 배경 패턴 전체에 애니메이션을 줄 수 있다.
 
 ```html
@@ -404,7 +404,7 @@ faceElem.addEventListener('click', function () {
 </svg>
 ```
 
-### 4. 마스크1 - 마스크의 기본적인 사용법
+### 4.마스크1 - 마스크의 기본적인 사용법
 - 흰색영역은 보이고, 검정색 영역은 보이지 않는다.
 - circle을 white으로 변경한다.
 - 회색계열은 반투명으로 보인다.
@@ -438,7 +438,7 @@ faceElem.addEventListener('click', function () {
 </svg>
 ```
 
-### 5. 마스크2 - JS을 이용해 돋보기 효과 만들기
+### 5.마스크2 - JS을 이용해 돋보기 효과 만들기
 - 
 
 ```html
@@ -504,3 +504,139 @@ faceElem.addEventListener('click', function () {
 
 ---
 ## 섹션6. Stroke 애니메이션
+### 1.Stroke 애니메이션 기본
+- stroke-dasharray : 선 길이
+- stroke-dashoffset : 선이 보이는 길이
+
+```html
+<style>
+  @keyframes dash-ani {
+    form { stroke-dashoffset: 700; }
+    to { stroke-dashoffset: 0; }
+  }
+
+  circle {
+    stroke: black;
+    stroke-width: 5;
+    stroke-dasharray: 700;
+    stroke-dashoffset: 0;
+    fill: transparent;
+    animation: dash-ani 2s;
+  }
+
+  path {
+    stroke: black;
+    stroke-width: 5;
+    stroke-dasharray: 727;
+    stroke-dashoffset: 0;
+    fill: transparent;
+    animation: dash-ani 2s;
+  }
+</style>
+
+<script>
+  document.querySelector('path').getTotalLength();
+</script>
+
+<svg viewBox="0 0 800 500">
+  <circle cx="400" cy="250" r="100" />
+  <path></path>
+</svg>
+```
+
+### 2.그래픽 로고가 그려지는 애니메이션 만들기
+
+---
+## 섹션 7. SMIL 애니메이션
+### 1.SMIL 애니메이션의 기본적인 사용법
+- Synchronized Multimedia Integration Language (SMIL 3.0)
+- 스밀 애니메이션
+- attributeName: 바꿀 속성
+- dur: 지속시간
+- to: 목적, 위치
+- repeatCount: 반복횟수, 숫자 또는 무한반복(indefinite)
+- fill: 마지막 지점에서 마무리
+- begin: 시작 딜레이, 숫자s 또는 대기(indefinite)
+- EX에선 지원하지 않음
+
+```html
+
+<svg class="svg" viewBox="0 0 1000 1000">
+  <rect x="10" y="10" width="20%" height="20%">
+    <animation attributeName="x" dur="1s" to="700" repeatCount="indefinite" fill="freeze" begin="1s"></animation>
+  </rect>
+</svg>
+```
+
+### 2.애니메이션 조작하기
+```html
+<svg class="svg" viewBox="0 0 1000 1000">
+  <defs>
+    <script>
+      window.addEventListener('DOMContentLoaded', () => {
+        const rectElem = document.querySelector('.rect');
+        const aniElem = document.querySelector('.ani');
+
+        rectElem.addEventListener('click', () => {
+          aniElem.beginElement();
+        });
+      });
+    </script>
+  </defs>
+
+  <rect class="rect" x="10" y="10" width="20%" height="20%">
+    <animation class="ani" attributeName="x" dur="1s" to="700" repeatCount="indefinite" fill="freeze" begin="indefinite"></animation>
+  </rect>
+</svg>
+```
+
+### 3.Morphing 효과 만들기
+- 일러스터 svg 저장을 통해 도형 좌표를 확인한다.(d="")
+
+```html
+<style>
+  body {
+    margin: 0;
+    background: #666;
+  }
+</style>
+<svg id="Layer_1" data-name="layer 1" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 684 684">
+  <defs>
+    <style>
+      .cls-1 { fill: #fff000; }
+    </style>
+  </defs>
+  <title>이름</title>
+  <path class="cls-1" d="도형 좌표" transform="translate(-42 -42)" />
+    <animate attributeName="d" dur="3s" to="변경 좌표"></animate>
+  </path>
+</svg>
+```
+
+### 4.CSS 애니메이션의 alternate를 SMIL로 구현하기
+- to를 삭제후 values와 keyTimes를 추가한다.
+- values="0; 700; 0" (시작; 중간; 끝)
+- keyTimes="0; 0.5; 1" (시작; 중간; 끝)
+
+```html
+<svg id="svg" viewBox="0 0 1000 1000">
+  <rect class="rect" x="10" y="10" width="20%" height="20%">
+    <animate class="ani" attributeName="x" dur="2s" values="0; 700; 0" keyTimes="0; 0.5; 1" repeatCount="indefinite"></animate>
+  </rect>
+</svg>
+```
+
+---
+## 섹션 8. 아이콘 폰트 셋트 만들기
+### 1.아이콘 폰트 세트 만들기
+- iconmoon.io
+- import Icons 클릭하여 업로드하기
+- font폴더, style.css 필요
+- 파일이름을 변경하면 css 파일의 이름도 변경해야함
+- 클래스를 통해 색상, 애니메이션 등 효과 부여
+
+---
+## 섹션 9. React Mon 만들기 1
+### React Mon 만들기 1
+- 리액트 로고 애니메이션 만들기
+- 
