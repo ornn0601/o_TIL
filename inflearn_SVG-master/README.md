@@ -42,14 +42,15 @@
 
 3) SVG 요소를 직접 inline으로 삽입
 ```html
-<svg></svg>
-```
-4) <object> 태그
+<svg> </svg>
+```  
+  
+4) object 태그  
 - 이미지 태그와 차이점은 svg코드가 살아있음.
 ```html
 <object data="images/studiomeal.svg" type="image/svg+xml">
 ```
-
+  
 ### 3.SVG의 크기 설정
 - 반응형으로 움직여야하기 때문에 고정 크기는 설정하지 않는다.
 - viewBox : 보이는 뷰의 크기를 나타냄.
