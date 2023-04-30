@@ -80,10 +80,10 @@
 ## 섹션2. CSS와 자바스크립트 적용하기
 ### 1.CSS 적용하기
 1. 외부에서 작성하기
-- <style></style>
+- `<style></style>`
 2. svg내부에 작성하기 (인라인 형태)
 - 장점 : svg 파일을 단독으로 사용할 수 있다.
-- 오류를 대응하기 : <svg><style><![CDATA[  css  ]]></style></svg>
+- 오류를 대응하기 : `<svg><style><![CDATA[  css  ]]></style></svg>`
 
 ### 2.자바스크립트 적용하기
 1. 외부에서 작성하기
@@ -131,7 +131,7 @@ faceElem.addEventListener('click', function () {
 ```
 
 ### 2.직선 그리기
-1) <line></line>
+1) `<line></line>`
 - x1 : 시작지점의 x
 - x2 : 끝지점의 x
 - y1 : 시작지점의 y
@@ -214,7 +214,7 @@ faceElem.addEventListener('click', function () {
 ```
 
 ### 4.그룹만들기
-- <g></g>
+- `<g></g>`
 - 그룹으로 공통적으로 무언가를 할 수 있다.
 
 ```html
@@ -229,7 +229,7 @@ faceElem.addEventListener('click', function () {
 ---
 ## 섹션4. 텍스트
 ### 1.글자 쓰기
-- <text><</text>
+- `<text><</text>`
 
 ```html
 <style>
@@ -245,7 +245,7 @@ faceElem.addEventListener('click', function () {
 ```
 
 ### 2.곡선에 따라 글자 쓰기
-- <defs></defs>
+- `<defs></defs>`
 - 참조정보
 - path의 id = textPath의 href 연결
 
@@ -273,7 +273,7 @@ faceElem.addEventListener('click', function () {
 ```
 
 ### 3.텍스트 부분 스타일링 
-- <tspan></tspan>
+- `<tspan></tspan>`
 
 ```html
 <style>
@@ -644,13 +644,3 @@ faceElem.addEventListener('click', function () {
 ---
 ## 보너스 섹션 1. CSS Transform
 ### CSS Transform
-- 
-
-```html
-<style>
-
-
-</style>
-
-
-```
