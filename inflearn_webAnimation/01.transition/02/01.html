@@ -17,6 +17,7 @@
       left: 100px;
       top: 50px;
       width: 150px;
+      transition: 1s;
     }
 
   </style>
@@ -25,5 +26,27 @@
   <img class="hand" src="images/hand.svg" alt="Hand">
   <!-- <img class="key" src="images/key.svg" alt="Key"> -->
   <object class="key" data="images/key.svg" type="image/svg+xml"></object>
+
+  <script>
+    const hand = document.querySelector('.hand');
+    const key = document.querySelector('.key');
+    let isKeyInHand = false;
+
+    hand.addEventListener('click', () => {
+      if (isKeyInHand) {
+        key.style.transform = 'scale(1) translate(0, 0)';
+      } else {
+        const handRect = hand.getBoundingClientRect();
+        const leftPosition = handRect.left - 30;
+        const topPosition = handRect.top - 70;
+        key.style.transform = `scale(0.75) translate(${leftPosition}px, ${topPosition}px)`;
+      }
+    });
+
+    key.addEventListener('transitionend', () => {
+      isKeyInHand = !isKeyInHand;
+    });
+
+  </script>
 </body>
 </html>
