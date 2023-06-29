@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Web Animation API</title>
+	<style>
+		.box {
+			width: 100px;
+			height: 100px;
+			background: dodgerblue;
+		}
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+
+	<script>
+		// 애니메이션 시작/종료 시점 이용하기
+		// 
+
+		const box = document.querySelector(".box");
+
+		const animation = box.animate(
+			// Keyframes
+			[
+				{transform: 'translateX(0)', opacity: 0, offset: 0 },
+				{transform: 'translateX(-50px)', opacity: 0.5, offset: 0.7 },
+				{transform: 'translateX(200px)', opacity: 1, offset: 1 }
+			],
+			// options
+			{
+				duration: 2000,
+				easing: 'linear',
+				fill: 'forwards',
+				// iterations: Infinity,
+				// direction: 'alternate'
+			}
+		);
+
+		// console.log(animation);
+		// .then(함수) 
+		animation.finished.then(() => {
+			console.log('애니메이션 종료');
+		});
+
+		animation.ready.then(() => {
+			console.log('애니메이션 시작');
+		});
+	</script>
+</body>
+</html>

@@ -45,4 +45,20 @@
 
 ---
 ## 3. Web Animation API 기본
+- 기존 애니메이션은 상황에 대응해서 제어하기가 어려웠다.
+- 외부 라이브러리가 아닌 웹 표준 기술이다.
+- [MDN](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API)
+
+### 1. animate()
+- box.animate(Keyframes, options)
+![css transition](./image/js_animate_1.png)
+
+### 2. 여러개의 객체에 애니메이션 적용하기
+
+
+
+
+
+
+
 
