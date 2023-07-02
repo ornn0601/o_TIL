@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Starfield</title>
+	<style>
+		body {
+			overflow: hidden;
+			background-color: black;
+		}
+
+		.star {
+			position: absolute;
+			width: 3px;
+			height: 3px;
+			font-size: 0; /* 크기 삭제 */
+			border-radius: 50%;
+			background: white;
+		}
+	</style>
+</head>
+<body>
+	<div class="starfield"></div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/web-animations/2.3.2/web-animations-next.min.js"></script>
+
+	<script type="module">
+		import Star from './Star.js';
+
+		const numberOfStars = 200; // 전체 갯수
+		const canvasWidth = window.innerWidth;
+		const canvasHeight = window.innerHeight;
+		const zModifier = canvasHeight; // 형태 변경에 필요한 수치
+		const effects = [];
+
+		let x, y, z;
+		let scale;
+		let keyframes, options;
+		let pointFrom, pointTo;
+		let star;
+
+		// 3차원 원근 계산 함수
+		// *0.5 : 좌표 가운데 위치
+		function set3DPoint(x, y, z) {
+			const scale = zModifier / (zModifier + z);
+			const x2D = x * scale + canvasWidth*0.5;
+			const y2D = y * scale + canvasHeight*0.5;
+
+			return [x2D, y2D, scale];
+		}
+
+		for (let i = 0; i < numberOfStars; i++) {
+			x = Math.random() * canvasWidth - canvasWidth*0.5;
+			y = Math.random() * canvasHeight - canvasHeight*0.5;
+			z = Math.random() * zModifier;
+
+			scale = zModifier / (zModifier + z);
+
+			pointFrom = set3DPoint(x, y, z); // 출발점 좌표
+			pointTo = set3DPoint(x, y, z - zModifier); // 도착점 좌표
+
+			star = new Star(i);
+
+			keyframes = [
+				{
+					transform: `
+						translate(${pointFrom[0]}px, ${pointFrom[1]}px)
+						scale(${pointFrom[2]})
+					`
+				},
+				{
+					transform: `
+						translate(${pointTo[0]}px, ${pointTo[1]}px)
+						scale(${pointTo[2]})
+					`
+				}
+			];
+
+			options = {
+				duration: 1000 / scale,
+				iterations: Infinity,
+				fill: 'both',
+				easing: 'linear'
+			};
+
+			effects.push(new KeyframeEffect(star.element, keyframes, options));
+		}
+
+		const groupEffect = new GroupEffect(effects);
+		const animation = document.timeline.play(groupEffect);
+
+		window.addEventListener('click', () => {
+			if (animation.playState === 'paused') {
+				animation.play();
+			} else {
+				animation.pause();
+			}
+		});
+
+		// 별 생성
+		// for (let i = 0; i < numberOfStars; i++) {
+		// 	x = Math.random() * window.innerWidth;
+		// 	y = Math.random() * window.innerHeight;
+		// 	z = Math.random() * zModifier;
+		// 	scale = zModifier / (zModifier + z);
+
+		// 	new Star(i, x, y, scale);
+		// }
+	</script>
+</body>
+</html>

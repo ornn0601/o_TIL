@@ -54,7 +54,8 @@
 ![css transition](./image/js_animate_1.png)
 
 ### 2. 여러개의 객체에 애니메이션 적용하기
-
+- GroupEffect
+- 아직 지원되지 않지만 사용법은 동일하다.
 
 
 
