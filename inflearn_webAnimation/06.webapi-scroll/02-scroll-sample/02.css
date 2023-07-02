@@ -23,3 +23,31 @@ body {
   padding: 1em;
   font-size: 50px;
 }
+
+/* 시작 */
+.wrap {
+	contain: paint;
+}
+
+.gallery {
+	display: flex;
+	align-items: center;
+	position: sticky;
+	top: 0;
+	width: 350vw;
+	max-width: 4000px;
+	height: 100vh; /* 세로 가운데 정렬 */
+	border: 10px dashed deeppink;
+}
+
+.gallery-item {
+	width: 70vw;
+	max-width: 800px;
+	flex-shrink: 0; /* flex 요소의 크기 적용 */
+	line-height: 0;
+}
+
+.gallery-timeline {
+	height: 2000px;
+	border: 10px dashed mediumaquamarine;
+}
