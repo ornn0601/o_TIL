@@ -20,12 +20,14 @@ airplane.animate(
 );
 
 // 스크롤
+// window.scrollY : 현재 스크롤 된 위치 값
+// html "data-" 값 변경: CSS 사용을 위한 값 변경 (비행기 방향 수정)
+
 let prevScrollY = -1; // 처음 스크롤 할 때 오락가락 방지
-let scrollFlag;
+let scrollFlag; // 아주 빠르게 반복되는 요소의 빈도수의 횟수 제한을 건다.
 window.addEventListener('scroll', e => {
 	if (scrollFlag) return;
-
-	scrollFlag = true;
+	scrollFlag = true; 
 
 	setTimeout(() => {
 		scrollFlag = false;

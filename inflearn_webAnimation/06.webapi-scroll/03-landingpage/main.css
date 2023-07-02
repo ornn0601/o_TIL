@@ -119,13 +119,12 @@ a {
 
 .hello-jeju {
 	fill: white;
-	transform-origin: 388px 1431px;
+	transform-origin: 388px 1431px; /* 가운데 지점 설정 */
 	will-change: transform, opacity;
 }
 
-
-
 /* gallery-timeline */
+/* left, width: 여백 고려  */
 .gallery-timeline {
 	position: absolute;
 	left: 3%;
@@ -140,7 +139,7 @@ a {
 	top: 0;
 	width: 360px;
 	margin: 0 auto;
-	padding-top: 340px;
+	padding-top: 340px; /* 상단 간격 */
 }
 
 .gallery {
@@ -167,7 +166,7 @@ a {
 	width: 50%;
 	margin: auto;
 	aspect-ratio: 1;
-	border-radius: 50%;
+	border-radius: 50%; /* 동그라미 형태 */
 }
 
 @media (max-width: 1000px) {
